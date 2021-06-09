@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
   def new
+    @dog = Dog.new
+    @dog_types = DogType.all
   end
 
   def create
