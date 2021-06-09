@@ -1,0 +1,32 @@
+<div class="container py-5">
+  <h5>犬種一覧・追加</h5>
+    <div class="row">
+      <div class="col-10 py-5">
+        <%= form_with model: @dog_type, local:true do |f| %>
+          <%= f.label :type_name, '犬種名' %>
+          <%= f.text_field :type_name, placeholder: "犬種",class: "mx-5" %>
+          <%= f.submit "新規登録",class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 py-5">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>犬種</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @dog_types.each do |dog_type| %>
+              <tr>
+                <td><%= dog_type.type_name %></td>
+                <td><%= link_to "編集する", edit_dog_type_path(dog_type.id), class: "btn btn-success" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

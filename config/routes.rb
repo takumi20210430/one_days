@@ -1,0 +1,13 @@
+Rails.application.routes.draw do
+  devise_for :users
+  root 'homes#top'
+  get 'homes/ranking' => 'homes#ranking'
+  resources :dog_types, only: [:index, :create, :edit, :update]
+  resources :articles
+  resources :dogs
+  resources :users
+  get 'users/unsubscribe' => 'users#unsubscribe'
+  patch 'users/withdraw' => 'users#withdraw'
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end

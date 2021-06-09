@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-5 px-sm-0 mx-auto">
+      <h1>User編集画面</h1>
+      <%= form_with model:@user, local: true do |f| %>
+        <div cass="form">
+          <div class="form-group">
+            <label for="user name">名前</label>
+            <%= f.text_field :name %>
+          </div>
+          <div class="form-group">
+            <%= f.attachment_field :image %>
+          </div>
+          <div class="form-group">
+            <label for="user introduction">Introduction</label>
+            <%= f.text_area :introduction %>
+          </div>
+          <div class="form-group">
+            <br><%= f.submit '変更する' %></br>
+          </div>
+          <%= link_to "退会する",users_unsubscribe_path,class:"btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
