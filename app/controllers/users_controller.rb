@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = current_user
     @users = User.all
     @dog = Dog.new
+    @dogs = Dog.all
   end
 
   def show

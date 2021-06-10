@@ -9,7 +9,7 @@
     <% user.dogs.each do |dog| %>
       <tr>
         <th>pet_dogs</th>
-        <th><%= dog.name %><%= dog.dog_type.type_name %></th>
+          <th><%= dog.name %>(<%= dog.dog_type_id %>)</th>
       </tr>
     <% end %>
     <tr>

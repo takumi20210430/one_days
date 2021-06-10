@@ -5,8 +5,8 @@
     <br><%= f.text_field :name, class: "col-md-12" %></br>
   </div>
   <div class="form-group">
-    <label for="dog_type">犬種</lebel>
-    <br><%= f.collection_select :dog_type_id, @dog_types, :id, :type_name, {prompt: "選択してください"},class: "form-control dog_type" %></br>
+    <label for="dog_type_id">犬種</lebel>
+    <br><%= f.select :dog_type_id, Dog.dog_type_ids.keys %></br>
   </div>
   <div class="form-group">
     <label for="dog_introduction">紹介</label>

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'homes#top'
   get 'homes/ranking' => 'homes#ranking'
-  resources :dog_types, only: [:index, :create, :edit, :update]
   resources :articles
   resources :dogs
   resources :users
