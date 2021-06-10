@@ -1,7 +1,6 @@
 class DogsController < ApplicationController
   def new
     @dog = Dog.new
-    @dog_types = DogType.all
   end
 
   def create
@@ -12,9 +11,14 @@ class DogsController < ApplicationController
   end
 
   def index
+    @user = current_user
+    @users = User.all
+    @dogs = Dog.all
+
   end
 
   def show
+    @dog = Dog.find(params[:id])
   end
 
   def edit

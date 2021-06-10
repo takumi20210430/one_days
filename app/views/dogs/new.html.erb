@@ -9,6 +9,10 @@
     <br><%= f.select :dog_type_id, Dog.dog_type_ids.keys %></br>
   </div>
   <div class="form-group">
+    <label for="dog_name">年齢</lebel>
+    <br><%= f.text_field :name, class: "col-md-12" %></br>
+  </div>
+  <div class="form-group">
     <label for="dog_introduction">紹介</label>
     <br><%= f.text_area :introduction, class: "col-md-12"%></br>
   </div>

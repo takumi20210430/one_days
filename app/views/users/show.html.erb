@@ -19,11 +19,11 @@
             <tr>
               <td>
                 <%= link_to user_path(@user.id) do %>
-                  <%= attachment_image_tag @user, :profile_image_url, :fill, 60, 60, fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag @user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
                 <% end %>
               </td>
               <td>
-                <%= dog.dog_type %>
+                <%= dog.dog_type_id %>
               </td>
               <td>
                 <%= link_to dog.name, dog_path(dog) %>
