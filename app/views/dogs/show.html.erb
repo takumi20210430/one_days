@@ -1,29 +1,34 @@
-<div class="container px-5 px-sm-0">
-  <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-8 offset-md-1">
-      <h2><%= @dog.name %></h2>
-      <table class="table">
-        <thead>
+<div class="container py-5">
+	<h5><%= @dog.name %>ページ</h5>
+	<div class="row">
+	  <div class= "col-5">
+	     <%= attachment_image_tag @dog, :image, :fill,300,250, fallback: "no_image.jpg",size:'300x250'  %>
+	  </div>
+		<div class="col-7 mx-auto">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+          	<td>名前</td>
+          	<td><%= @dog.name %></td>
           <tr>
-            <th></th>
-            <th>name</th>
-            <th colspan="2"></th>
+          	<td>年齢</td>
+          	<td class="text-left"><%= @dog.age %></td>
           </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <td>
-                  <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
-              </td>
-              <td>
-              </td>
-              <td>
-              </td>
-            </tr>
+          <tr>
+          	<td>特技</td>
+          	<td class="text-left"><%= @dog.skill %></td>
+          </tr>
+          <tr>
+          	<td>favorite</td>
+          	<td class="text-left"><%= @dog.favorite %></td>
+          </tr>
+          <tr>
+            <td>introduction</td>
+            <td class="text_field"><%= @dog.introduction %></td>
+          </tr>
         </tbody>
       </table>
+      <P class="font-weight-bold"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3" %></p>
     </div>
   </div>
 </div>

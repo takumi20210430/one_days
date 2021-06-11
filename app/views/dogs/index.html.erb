@@ -1,36 +1,33 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-
-      <h2>犬一覧</h2>
-      <table class="table">
-        <thead>
+    <h2>犬一覧</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>飼い主</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @dogs.each do |dog| %>
           <tr>
-            <th></th>
-            <th></th>
-            <th>飼い主</th>
-            <th colspan="3"></th>
+            <td>
+              <%= link_to dog_path(dog.id) do %>
+                <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to dog.name, dog_path(dog) %></br>
+              (<%= dog.dog_type_id %>)
+            </td>
+            <td>
+              <%= link_to dog.user.name, user_path(dog.user.id) %>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <% @dogs.each do |dog| %>
-            <tr>
-              <td>
-                <%= link_to dog_path(dog.id) do %>
-                  <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
-                  <% end %>
-              </td>
-              <td>
-                <%= link_to dog.name, dog_path(dog) %></br>
-                (<%= dog.dog_type_id %>)
-              </td>
-              <td>
-
-                  <%= link_to dog.user.name, user_path(dog.user.id) %>
-              </td>
-            </tr>
-         <% end %>
-        </tbody>
-      </table>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

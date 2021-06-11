@@ -8,4 +8,6 @@ class User < ApplicationRecord
          has_many :articles, dependent: :destroy
 
          attachment :image
+
+         enum is_deleted: {Available: false, Invalid: true}
 end

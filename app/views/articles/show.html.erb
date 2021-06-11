@@ -1,2 +1,23 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container py-5">
+	<h5><%= link_to @article.user.name,user_path(@article.user.id) %>さんの投稿</h5>
+	<div class="row">
+	  <div class= "col-5">
+	     <%= attachment_image_tag @article, :image1, :fill,300,250 %>
+	  </div>
+		<div class="col-7 mx-auto">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+          	<td>タイトル</td></td>
+          	<td><%= @article.title %></td>
+          <tr>
+          <tr>
+            <td>投稿内容</td>
+            <td class="text_field"><%= @article.body %></td>
+          </tr>
+        </tbody>
+      </table>
+      <P class="font-weight-bold"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success mx-3" %></p>
+    </div>
+  </div>
+</div>

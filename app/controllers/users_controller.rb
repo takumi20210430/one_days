@@ -20,6 +20,10 @@ class UsersController < ApplicationController
   end
 
   def withdraw
+    @user = current_user
+    @user.update(is_deleted: "Invalid")
+    reset_session
+    redirect_to root_path
   end
 
   def update
@@ -37,6 +41,6 @@ class UsersController < ApplicationController
    private
 
   def user_params
-    params.require(:user).permit(:name, :image_id, :introduction, :admin)
+    params.require(:user).permit(:name, :image, :introduction, :admin, :is_deleted)
   end
 end

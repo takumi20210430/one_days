@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2021_06_07_011420) do
     t.integer "dog_id"
     t.string "title"
     t.text "body"
-    t.text "image_id1"
-    t.text "image_id2"
-    t.text "image_id3"
-    t.text "image_id4"
-    t.text "image_id5"
+    t.text "image1_id"
+    t.text "image2_id"
+    t.text "image3_id"
+    t.text "image4_id"
+    t.text "image5_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

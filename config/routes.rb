@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :articles
   resources :dogs
   resources :users
-  get 'users/unsubscribe' => 'users#unsubscribe'
-  patch 'users/withdraw' => 'users#withdraw'
+  get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+  patch 'users/:id/withdraw' => 'users#withdraw', as: 'withdraw'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
