@@ -19,6 +19,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @user = current_user
+    @article_comment = ArticleComment.new
+    @article_comments = @article.article_comments
   end
 
   def edit
@@ -28,10 +30,13 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.update(article_params)
-    redirect_to user_path(@article.id)
+    redirect_to user_path(@article.user.id)
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to user_path(@article.user.id)
   end
 
   private

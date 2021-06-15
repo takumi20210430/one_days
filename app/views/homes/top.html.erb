@@ -1,9 +1,7 @@
 <% if user_signed_in? %>
-  <div class="container">
-    <div class="row">
-      <div mx-auto>
-        <h2>新規投稿一覧</h2>
-      </div>
+  <div class="new-container">
+    <div class="new-box-center">
+      <%= render'new_article', article: @article %>
     </div>
   </div>
 <% else %>

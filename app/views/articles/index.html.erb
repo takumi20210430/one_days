@@ -1,20 +1,18 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-9">
-      <div class="item-index mb-5">
-        <h3>投稿一覧</h3>
+<div class="container">
+  <h3>投稿一覧</h3>
+  <div class="row row-cols-1 row-cols-md-4">
+    <% @articles.each do |article| %>
+      <div class="col mb-4">
+        <div class="card">
+          <p>タイトル　<%= link_to article.title,article_path(article.id) %></p>
+          <p><%= "#{article.article_comments.count} コメント" %></p>
+          <%= link_to article_path(article.id) do %>
+            <%= attachment_image_tag(article, :image1, :fill, 200, 150, fallback: "no_image.jpg",size:'200x150' ) %></br>
+            投稿者 <%= article.user.name %>
+          <% end %>
+        </div>
       </div>
-      <div class="row" style="flex-wrap:wrap;">
-        <% @articles.each do |article| %>
-            <div class="col mx-3">
-                <p>投稿者 <%= link_to article.user.name,user_path(article.user.id) %></p>
-                <p>タイトル　<%= link_to article.title,article_path(article.id) %></p>
-                <%= link_to article_path(article.id) do %>
-                    <%= attachment_image_tag(article, :image1, :fill, 200, 150) %>
-                <% end %>
-            </div>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
+

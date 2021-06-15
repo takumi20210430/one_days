@@ -1,19 +1,15 @@
-<div class="rank-container">
-  <div class="rank-box-center">
-    <h1>投稿記事いいねランキング</h1>
+<h1>新着投稿一覧</h1>
     <table class="table">
       <thead>
-        <th>順位</th>
-        <th>いいね数</th>
+        <th></th>
         <th>タイトル</th>
         <th>image</th>
         <th>投稿者</th>
       </thead>
 			<tbody>
-				<% @all_ranks.each.with_index(1) do |article, i| %>
+				<% article.each.with_index(1) do |article, i| %>
 				  <tr>
-					  <td><%= i %>位</td>
-					  <td><%= "#{article.favorites.count} いいね" %></td>
+					  <td><%= i %></td>
           	<td><%= link_to article.title,article_path(article.id) %></td>
           	<td><%= attachment_image_tag(article, :image1, :fill, 200, 150) %></td>
           	<td><%= link_to article.user.name, user_path(article.user.id) %></td>
@@ -21,8 +17,3 @@
         <% end %>
       </tbody>
     </table>
-  </div>
-</div>
-
-
-

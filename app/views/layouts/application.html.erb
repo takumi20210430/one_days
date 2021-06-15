@@ -7,10 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
+    <script></script>
+
+    <script src="js/slick.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.slider').slick({
+          dots: true
+
+        });
+
+      });
+    </script>
+
     <%= yield %>
   </body>
 </html>

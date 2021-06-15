@@ -16,6 +16,10 @@
       <th>introduction</th>
       <th><%= user.introduction %></th>
     </tr>
+    <tr>
+      <th><%=link_to "フォロー", follows_user_path(@user.id) %></th>
+      <th><%=link_to "フォロワー", followers_user_path(@user.id) %></th>
+    </tr>
   </tbody>
 </table>
 <div class="row">
