@@ -28,7 +28,9 @@
           </tr>
         </tbody>
       </table>
-      <P class="font-weight-bold"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3" %></p>
+      <% if @dog.user == current_user || current_user.admin %>
+        <P class="font-weight-bold"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3" %></p>
+      <% end %>
     </div>
   </div>
 </div>

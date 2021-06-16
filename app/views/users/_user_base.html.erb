@@ -17,16 +17,28 @@
       <th><%= user.introduction %></th>
     </tr>
     <tr>
-      <th><%=link_to "フォロー", follows_user_path(@user.id) %></th>
-      <th><%=link_to "フォロワー", followers_user_path(@user.id) %></th>
+      <th>
+        <%=link_to "フォロー", follows_user_path(user.id) %>
+        <%= user.followings.count %>人
+      </th>
+      <th>
+        <%=link_to "フォロワー", followers_user_path(user.id) %>
+        <div id="follow_counts_<%= user.id %>">
+          <%= render "follow_count", user: user %>
+        </div>
+      </th>
     </tr>
   </tbody>
 </table>
-<div class="row">
-  <%= link_to edit_user_path(user),class: "btn btn-outline-secondary btn-block" do %>
-    <i class="fas fa-user-cog"></i>
+  <% if user == current_user %>
+    <%= link_to edit_user_path(user),class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+    <%= link_to "犬を登録",new_dog_path,class: "btn btn-info btn-sm btn-block mb-3 new_dog" %>
+    <%= link_to "記事を投稿",new_article_path,class: "btn btn-success btn-sm btn-block new_article" %>
+  <% else %>
+    <div id="follow_buttons_<%= user.id %>">
+      <%= render "follow", user: user %>
+    </div>
   <% end %>
-   <%= link_to "犬を登録",new_dog_path,class: "btn btn-info btn-sm btn-block mb-3 new_dog" %>
-   <%= link_to "記事を投稿",new_article_path,class: "btn btn-success btn-sm btn-block new_article" %>
-</div>
 

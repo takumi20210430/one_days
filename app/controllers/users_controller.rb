@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @dogs = @user.dogs
     @dog = Dog.new
+    @articles = @user.articles
   end
 
   def edit

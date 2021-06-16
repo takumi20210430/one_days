@@ -17,3 +17,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+.center {
+    /* slickでslider化するとimgがblockになるのでmarginで中央寄せにしないといけない */
+    margin: 0 auto;
+}

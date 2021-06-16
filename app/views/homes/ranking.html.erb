@@ -7,6 +7,7 @@
         <th>いいね数</th>
         <th>タイトル</th>
         <th>image</th>
+        <th>コメント数</th>
         <th>投稿者</th>
       </thead>
 			<tbody>
@@ -16,6 +17,7 @@
 					  <td><%= "#{article.favorites.count} いいね" %></td>
           	<td><%= link_to article.title,article_path(article.id) %></td>
           	<td><%= attachment_image_tag(article, :image1, :fill, 200, 150) %></td>
+          	<td><%= "#{article.article_comments.count} 件" %></td>
           	<td><%= link_to article.user.name, user_path(article.user.id) %></td>
           </tr>
         <% end %>

@@ -32,6 +32,25 @@
          <% end %>
         </tbody>
       </table>
+      <h3>投稿一覧</h3>
+      <div class="row row-cols-1 row-cols-md-4">
+        <% @articles.each do |article| %>
+          <div class="col mb-4">
+            <div class="card">
+              <p>タイトル　<%= link_to article.title,article_path(article.id) %></p>
+              <%= link_to article_path(article.id) do %>
+                <%= attachment_image_tag(article, :image1, :fill, 170, 170, fallback: "no_image.jpg",size:'163x165' ) %></br>
+              <% end %>
+            </div>
+            <table>
+              <div id="favorite_buttons_<%= article.id %>">
+                <%= render "favorites/favorite", article: article %>
+              </div>
+              コメント件数：<%= article.article_comments.count %>
+            </table>
+          </div>
+        <% end %>
+      </div>
     </div>
-</div>
+  </div>
 </div>
