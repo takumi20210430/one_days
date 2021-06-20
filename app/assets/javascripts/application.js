@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+
 //= require popper
 //= require bootstrap-sprockets
 
@@ -18,3 +19,28 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+$(window).on('scroll', function() {
+  scrollHeight = $(document).height();
+  scrollPosition = $(window).height() + $(window).scrollTop();
+  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+    console.log('29');
+    $('.jscroll').jscroll({
+      debug: true,
+      contentSelector: '.scroll-list',
+      nextSelector: 'span.next:last a'
+    });
+  }
+});
+
+$(function() {
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
+});
+
+//800=0.8秒/**

@@ -2,7 +2,14 @@
 	<h5><%= @dog.name %>ページ</h5>
 	<div class="row">
 	  <div class= "col-5">
-	     <%= attachment_image_tag @dog, :image, :fill,300,250, fallback: "no_image.jpg",size:'300x250'  %>
+	    <ul class="slider">
+        <li><%= attachment_image_tag @dog, :image1, :fill,300,250, fallback: "no_image.jpg",size:'300x250', class: "center" %></li>
+        <% if !@dog.image2.blank? %>
+          <li><%= attachment_image_tag @dog, :image2, :fill,300,250, class: "center" %></li>
+        <% end %>
+        <% if !@dog.image3.blank? %>
+          <li><%= attachment_image_tag @dog, :image3, :fill,300,250, class: "center" %></li>
+        <% end %>
 	  </div>
 		<div class="col-7 mx-auto">
 			<table class="table table-bordered">

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :name, {presence: true}
+
          has_many :dogs, dependent: :destroy
          has_many :articles, dependent: :destroy
          has_many :favorites, dependent: :destroy
@@ -16,11 +18,24 @@ class User < ApplicationRecord
 
          attachment :image
 
-         enum is_deleted: {Available: false, Invalid: true}
-
         def followed_by?(user)
           passive_relationships.find_by(following_id: user.id).present?
         end
+
+
+
+        def self.looks(searches, words)
+          if searches == "perfect_match"
+            @user = User.where("name LIKE ?", "#{words}")
+          elsif searches == "forward_match"
+            @user = User.where("name LIKE ?", "#{words}%")
+          elsif searches == "backword_match"
+            @user = User.where("name LIKE ?", "%#{words}")
+          else
+            @user = User.where("name LIKE ?", "%#{words}%")
+          end
+        end
+
 
 
 end

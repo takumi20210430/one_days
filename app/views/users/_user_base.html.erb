@@ -1,5 +1,5 @@
 <h2>User info</h2>
-<%= attachment_image_tag user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+<%= attachment_image_tag user, :image, :fill, 130, 130, fallback: "no_image.jpg",size:'130x130', class: "center" %>
 <table class="table">
   <tbody>
     <tr>
@@ -9,7 +9,7 @@
     <% user.dogs.each do |dog| %>
       <tr>
         <th>pet_dogs</th>
-          <th><%= dog.name %>(<%= dog.dog_type_id %>)</th>
+        <th><%= dog.name %>(<%= dog.dog_type_id %>)</th>
       </tr>
     <% end %>
     <tr>
@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <th>
-        <%=link_to "フォロー", follows_user_path(user.id) %>
+        <%=link_to "フォロー", follows_user_path(user.id) %></br>
         <%= user.followings.count %>人
       </th>
       <th>
@@ -28,14 +28,29 @@
         </div>
       </th>
     </tr>
+    <tr>
+      <th>
+         <%=link_to "follows新着投稿(30件)", follows_index_user_path(user.id) %></br>
+      </th>
+      <th></th>
+    </tr>
   </tbody>
 </table>
-  <% if user == current_user %>
+  <% if current_user.admin? %>
+    <div id="follow_buttons_<%= user.id %>">
+      <%= render "follow", user: user %>
+    </div>
     <%= link_to edit_user_path(user),class: "btn btn-outline-secondary btn-block" do %>
       <i class="fas fa-user-cog"></i>
     <% end %>
     <%= link_to "犬を登録",new_dog_path,class: "btn btn-info btn-sm btn-block mb-3 new_dog" %>
     <%= link_to "記事を投稿",new_article_path,class: "btn btn-success btn-sm btn-block new_article" %>
+  <% elsif user == current_user %>
+    <%= link_to edit_user_path(user),class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+    <%= link_to "犬を登録",new_dog_path,class: "btn btn-success btn-sm btn-block mb-3 new_dog" %>
+    <%= link_to "記事を投稿",new_article_path,class: "btn btn-info btn-sm btn-block new_article" %>
   <% else %>
     <div id="follow_buttons_<%= user.id %>">
       <%= render "follow", user: user %>

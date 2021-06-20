@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @user = current_user
-    @users = User.all
+    @users = User.all.page(params[:page]).per(5)
     @dog = Dog.new
     @dogs = Dog.all
   end
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @dogs = @user.dogs
     @dog = Dog.new
-    @articles = @user.articles
+    @articles = @user.articles.page(params[:page]).per(6)
   end
 
   def edit
@@ -18,13 +18,6 @@ class UsersController < ApplicationController
   end
 
   def unsubscribe
-  end
-
-  def withdraw
-    @user = current_user
-    @user.update(is_deleted: "Invalid")
-    reset_session
-    redirect_to root_path
   end
 
   def update
@@ -35,13 +28,24 @@ class UsersController < ApplicationController
 
   def follows
     user = User.find(params[:id])
-    @follows = user.followings
+    @follows = user.followings.page(params[:page]).per(5)
+  end
 
+  def follows_index
+    @article = Article.limit(30).order(" created_at DESC ")
+    @articles = @article.where(user_id: [*current_user.following_ids]).page(params[:page]).per(8)
   end
 
   def followers
     user = User.find(params[:id])
-    @followers = user.followers
+    @followers = user.followers.page(params[:page]).per(5)
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = 'ユーザーを削除しました。'
+    redirect_to :root #削除に成功すればrootページに戻る
   end
 
    private

@@ -21,3 +21,34 @@
     /* slickでslider化するとimgがblockになるのでmarginで中央寄せにしないといけない */
     margin: 0 auto;
 }
+
+ul{
+  display:flex;
+}
+li {
+display: inline;
+
+}
+
+nav.pagination {
+  display: none;
+}
+.scroll-list {
+  padding: 0;
+}
+main{
+  margin:20px 0 50px 0;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  background-color:#ff914d;
+  margin-top: auto;
+  height:130px;
+}

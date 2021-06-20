@@ -1,42 +1,42 @@
 <div class="container-xl-12">
   <div class="row">
     <div class="col-md-12">
-      <h2>Users</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>dog数</th>
-            <th>投稿数</th>
-            <th>フォロワー数</th>
-            <th colspan="2"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <td>
-                <%= link_to user_path(user.id) do %>
-                  <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
-                  <%= user.name %>
-                <% end %>
-              </td>
-              <td>
-                <%= user.dogs.count %>匹
-              </td>
-              <td>
-                <%= user.articles.count %>
-              </td>
-              <td>
-                <%= user.followers.count %>
-              </td>
-              <td id="follow_buttons_<%= user.id %>">
+      <h2>Users一覧</h2>
+      <div class="scroll-list jscroll">
+        <% @users.each do |user| %>
+          <ul class="justify-content-around">
+            <li>
+              <%= link_to user_path(user.id) do %>
+                <%= attachment_image_tag user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+              <% end %>
+            </li>
+            <li>
+              名前：
+              <%= link_to user.name, user_path(user.id) %>
+            </li>
+            <li>
+              dog数：
+              <%= user.dogs.count %>匹
+            </li>
+            <li>
+              投稿数：
+              <%= user.articles.count %>
+            </li>
+            <li id="follow_counts_<%= user.id %>">
+              フォロワー数：
+              <%= render "follow_count", user: user %>
+            </li>
+            <% if user == current_user %>
+              <li>myアカウント</li>
+            <% else %>
+              <li id="follow_buttons_<%= user.id %>">
                 <%= render "follow", user: user %>
-              </td>
-            </tr>
-         <% end %>
-        </tbody>
-      </table>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <%= paginate @users %>
+      </div>
     </div>
   </div>
 </div>

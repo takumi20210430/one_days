@@ -1,0 +1,92 @@
+<div class="container-xl-12">
+  <div class="row">
+    <div class="col-md-12">
+      <% if @range == "User" %>
+        <h2>Users search for "<%= @word %>"</h2>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>dog数</th>
+              <th>投稿数</th>
+              <th>フォロワー数</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td>
+                  <%= link_to user_path(user.id) do %>
+                    <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                    <%= user.name %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= user.dogs.count %>匹
+                </td>
+                <td>
+                  <%= user.articles.count %>
+                </td>
+                <td>
+                  <%= user.followers.count %>
+                </td>
+                <td id="follow_buttons_<%= user.id %>">
+                  <%= render "users/follow", user: user %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% elsif @range == "Dog" %>
+        <h2>Dogs search for "<%= @word %>"</h2>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>犬種</th>
+              <th>age</th>
+              <th>飼い主</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @dogs.each do |dog| %>
+              <tr>
+                <td>
+                  <%= link_to dog_path(dog.id) do %>
+                    <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                    <%= dog.name %></br>
+                  <% end %>
+                </td>
+                <td><%= dog.dog_type_id %></td>
+                <td><%= dog.age %>才</td>
+                <td>
+                  <%= link_to dog.user.name, user_path(dog.user.id) %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <div class="container">
+          <h3>投稿一覧</h3>
+          <div class="row row-cols-1 row-cols-md-4">
+            <% @articles.each do |article| %>
+              <div class="col mb-4">
+                <div class="card">
+                  <p>タイトル　<%= link_to article.title,article_path(article.id) %></p>
+                  <p><%= "#{article.article_comments.count} コメント" %></p>
+                  <%= link_to article_path(article.id) do %>
+                    <%= attachment_image_tag(article, :image1, :fill, 200, 150, fallback: "no_image.jpg",size:'200x150' ) %></br>
+                    投稿者 <%= article.user.name %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

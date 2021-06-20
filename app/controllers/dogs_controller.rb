@@ -13,7 +13,7 @@ class DogsController < ApplicationController
   def index
     @user = current_user
     @users = User.all
-    @dogs = Dog.all
+    @dogs = Dog.all.page(params[:page]).per(5)
 
   end
 
@@ -41,7 +41,7 @@ class DogsController < ApplicationController
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :image, :introduction, :age, :dog_type_id, :skill, :favorite)
+    params.require(:dog).permit(:name, :image1, :image2, :image3, :introduction, :age, :dog_type_id, :skill, :favorite)
   end
 
 end

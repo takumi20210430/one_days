@@ -2,10 +2,10 @@
   <div class="row">
     <div class="mx-auto">
       <h5 class="font-weight-bold text-center mb-5">本当に退会しますか？</h5>
-      <p class="text-center"></br>退会するとログインができなくなります。退会する場合は、「退会する」をクリックしてください。</p>
+      <p class="text-center"></br>再度ご利用をいただく場合には、新規登録のお手続きが必要になります。<br>退会する場合は、「退会する」をクリックしてください。</p>
       <div class="text-center">
         <%= link_to "退会しない", user_path(current_user), class: "btn btn-primary mx-5" %>
-        <%= link_to "退会する", withdraw_path(current_user), method: :patch, class: "btn btn-danger mx-5" %>
+        <%= link_to "退会する", user_path(current_user), method: :delete, data: { confilm: "本当に退会しますか？" }, class: "btn btn-danger mx-5" %>
       </div>
     </div>
   </div>

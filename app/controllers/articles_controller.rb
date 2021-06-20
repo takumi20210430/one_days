@@ -13,15 +13,16 @@ class ArticlesController < ApplicationController
   def index
     @user = current_user
     @users = User.all
-    @articles = Article.all
+    @articles = Article.all.page(params[:page]).per(8)
   end
 
   def show
     @article = Article.find(params[:id])
-    @user = current_user
     @article_comment = ArticleComment.new
     @article_comments = @article.article_comments
   end
+
+
 
   def edit
      @article = Article.find(params[:id])
@@ -30,7 +31,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.update(article_params)
-    redirect_to user_path(@article.user.id)
+    redirect_to article_path(@article)
   end
 
   def destroy

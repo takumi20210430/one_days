@@ -6,12 +6,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      
+
       t.text :image_id
       t.string :introduction
       t.boolean :is_deleted, default: false
       t.boolean :admin, default: false
-      
+
 
       ## Recoverable
       t.string   :reset_password_token
@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
 
       t.timestamps null: false
-      
+
     end
 
     add_index :users, :email,                unique: true
