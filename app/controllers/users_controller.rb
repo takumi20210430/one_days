@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @user = current_user
     @users = User.all.page(params[:page]).per(5)
     @dog = Dog.new
     @dogs = Dog.all
@@ -14,14 +13,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def unsubscribe
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(current_user)
   end

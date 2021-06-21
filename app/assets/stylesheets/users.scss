@@ -1,3 +1,27 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.info th{
+  width: 30px;
+}
+.taikai{
+  margin-top: 50px;
+}
+
+
+.align-items-center{
+  border-top: solid #333;
+}
+
+.user-index{
+  ul{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px 0;
+  }
+}
+
+.admin-info{
+  padding-top: 20px;
+}

@@ -1,5 +1,5 @@
 <div class="container py-5">
-	<h5><%= @dog.name %>ページ</h5>
+	<h5 class="dog-name"><%= @dog.name %>ページ</h5>
 	<div class="row">
 	  <div class= "col-5">
 	    <ul class="slider">
@@ -19,24 +19,28 @@
           	<td><%= @dog.name %></td>
           <tr>
           	<td>年齢</td>
-          	<td class="text-left"><%= @dog.age %></td>
+          	<td class="text-left"><%= @dog.age %>才</td>
+          </tr>
+          <tr>
+            <td>犬種</td>
+            <td class="text-left"><%= @dog.dog_type_id %></td>
           </tr>
           <tr>
           	<td>特技</td>
           	<td class="text-left"><%= @dog.skill %></td>
           </tr>
           <tr>
-          	<td>favorite</td>
+          	<td>お気に入り</td>
           	<td class="text-left"><%= @dog.favorite %></td>
           </tr>
           <tr>
-            <td>introduction</td>
+            <td>愛犬紹介</td>
             <td class="text_field"><%= @dog.introduction %></td>
           </tr>
         </tbody>
       </table>
       <% if @dog.user == current_user || current_user.admin %>
-        <P class="font-weight-bold"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3" %></p>
+        <P class="text-right"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3" %></p>
       <% end %>
     </div>
   </div>

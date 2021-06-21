@@ -8,17 +8,30 @@
   <div class="container">
     <div class="row">
       <div class='mx-auto col-11 col-sm-10 col-lg-8 col-xl-6'>
+        <ul class="slider">
+          <li><%= image_tag('dog1.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog2.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog3.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog4.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog5.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog6.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog7.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog8.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog9.jpg', size:'300x250', class: 'center') %></li>
+          <li><%= image_tag('dog10.jpg', size:'300x250', class: 'center') %></li>
+        </ul>
         <h1>welcome to <strong>ONE DAYS</strong>  !!</h1>
         <p>ONE DAYSは<strong>飼い主の不安を解消して幸せな犬を増やすこと</strong>をテーマに</p>
         <p>愛犬の悩みや、好きなこと、画像などを共有するサイトとなっております。</p>
         <p>犬と暮らしていない方も、たくさんの犬の画像に癒されることができます。</p>
         <p>是非楽しんでご利用ください。</p>
-      <div class="btn-wrapper col-10 mx-auto">
-        <div class="row">
-          <%= link_to 'Log in',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
-        </div>
-        <div class="row">
-          <%= link_to 'Sign Up',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+        <div class="btn-wrapper col-10 mx-auto">
+          <div class="row">
+            <%= link_to 'Log in',new_user_session_path, class: "btn btn-warning btn-sm btn-block mb-3 sign_in" %>
+          </div>
+          <div class="row">
+            <%= link_to 'Sign Up',new_user_registration_path, class: "btn btn-primary btn-sm btn-block sign_up" %>
+          </div>
         </div>
       </div>
     </div>

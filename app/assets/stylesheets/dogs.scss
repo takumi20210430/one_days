@@ -1,3 +1,17 @@
 // Place all the styles related to the dogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.dog-name{
+  margin-left:160px;
+}
+.align-items-center{
+  border-top: solid #333;
+}
+
+.dog-index{
+  ul{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px 0;
+  }
+}

@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     get :follows_index, on: :member
   end
   get 'search' => "searches#search"
-
   get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
 
 

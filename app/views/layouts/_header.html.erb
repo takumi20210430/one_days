@@ -1,13 +1,14 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffffff;">
     <div class="container">
-       <%= image_tag('theme.png', size:'180x180',class: 'logo') %>
+       <%= image_tag('theme.png', size:'180x180', class: 'logo') %>
       <span>
-        <%= link_to root_path, class: ' nav-link text-light' do %>
-          <%= image_tag('header-top.png', size:'150x150',class: 'logo') %>
+        <% if user_signed_in? %>
+        <%= link_to user_path(current_user), class: ' nav-link text-light' do %>
+          <%= image_tag('header-home.png', size:'150x150', class: 'logo') %>
         <% end %>
+      <% end %>
       </span>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,23 +16,23 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <% if current_user.admin? %>
-              <li><%= link_to ' マイページ',user_path(current_user),class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' User一覧',users_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' 犬一覧',dogs_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' 投稿一覧',articles_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' ランキング',homes_ranking_path,class: 'nav-link text-dark'%></li>
-              <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete ,class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ユーザー一覧',users_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' 犬一覧',dogs_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' 投稿一覧',articles_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' 新着投稿',user_path(current_user), class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ランキング',homes_ranking_path, class: 'nav-link text-dark'%></li>
+              <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete , class: 'nav-link text-dark' %></li>
             <% else %>
-              <li><%= link_to ' マイページ',user_path(current_user),class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' 投稿一覧',articles_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' ランキング',homes_ranking_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' User一覧',users_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' 犬一覧', dogs_path,class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete ,class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' 新着投稿',root_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' 投稿一覧',articles_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ランキング',homes_ranking_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ユーザー一覧',users_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' 犬一覧', dogs_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete , class: 'nav-link text-dark' %></li>
             <% end %>
           <% else %>
-            <li><%= link_to ' 新規登録', new_user_registration_path ,class: 'nav-link text-dark' %></li>
-            <li><%= link_to ' ログイン', new_user_session_path ,class: 'nav-link text-dark' %></li>
+            <li><%= link_to ' 新規登録', new_user_registration_path, class: 'nav-link text-dark' %></li>
+            <li><%= link_to ' ログイン', new_user_session_path, class: 'nav-link text-dark' %></li>
           <% end %>
         </ul>
       </div>

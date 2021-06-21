@@ -4,13 +4,13 @@
     <title>OneDays</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "slick.css" %>
     <%= stylesheet_link_tag "slick-theme.css" %>
   </head>
   <body>
-   <%= render 'layouts/header' %>
+    <%= render 'layouts/header' %>
     <%= render 'layouts/search' %>
     <main>
       <%= yield %>
@@ -24,6 +24,5 @@
       </script>
     </main>
       <%= render 'layouts/footer' %>
-
   </body>
 </html>

@@ -1,7 +1,7 @@
 <div class="container py-5">
-  <h5><%= link_to @article.user.name,user_path(@article.user.id) %>さんの投稿</h5>
+  <h5 class="text-left user-name"><%= link_to @article.user.name,user_path(@article.user.id) %>さんの投稿</h5>
 	<div class="row">
-    <div class= "col-5">
+    <div class="col-5">
       <ul class="slider">
         <li><%= attachment_image_tag @article, :image1, :fill,300,250, fallback: "no_image.jpg",size:'300x250', class: "center" %></li>
         <% if !@article.image2.blank? %>
@@ -51,7 +51,7 @@
         <% end %>
     </div>
     <% if @article.user == current_user || current_user.admin %>
-      <P class="font-weight-bold"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success mx-3" %><%= link_to "削除", article_path(@article.id), method: :delete, class: "btn btn-danger mx-3" %></p>
+      <P class="text-right"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success mx-3" %><%= link_to "削除", article_path(@article.id), method: :delete, class: "btn btn-danger mx-3" %></p>
     <% end %>
     </div>
   </div>

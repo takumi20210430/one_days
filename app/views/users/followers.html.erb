@@ -1,16 +1,16 @@
 <div class="container-xl-12">
   <div class="row">
-    <div class="col-md-12">
-      <h2>follower一覧</h2>
+    <div class="col-md-12 user-index">
+      <h2>フォロワー一覧</h2>
       <% if @followers.empty? %>
         <%= "ユーザーはいません" %>
       <% else %>
         <div class="scroll-list jscroll">
           <% @followers.each do |follower| %>
-            <ul class="justify-content-around">
+            <ul class="justify-content-around align-items-center">
               <li>
                 <%= link_to user_path(follower.id) do %>
-                  <%= attachment_image_tag follower, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag follower, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'100x100' %>
                 <% end %>
               </li>
               <li>

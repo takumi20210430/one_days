@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-5 px-sm-0 mx-auto">
-      <h1>User編集画面</h1>
+      <h1>ユーザー編集画面</h1>
       <%= form_with model:@user, local: true do |f| %>
         <div cass="form">
           <div class="form-group">
-            <label for="user name">名前</label>
+            <label for="user name">名前</label>（１５文字以内）</br>
             <%= f.text_field :name %>
           </div>
+          <h4>プロフィール写真を選択する</h4>
           <div class="form-group">
-            <img id="preview_0" style="width:15%;">
+            <img id="preview_0" style="width:30%;">
             <%= f.attachment_field :image %>
             <script>
               $('#user_image').on('change', function (e) {
@@ -22,14 +23,15 @@
             </script>
           </div>
           <div class="form-group">
-            <label for="user introduction">自己紹介</label>
-            <%= f.text_area :introduction %>
+            <label for="user introduction">自己紹介</label>（２００文字以内）
+            <%= f.text_area :introduction, size:'90x5' %>
           </div>
           <div class="form-group">
             <%= f.submit '変更する' %>
-            <%= link_to "退会",unsubscribe_path(current_user),class:"btn btn-danger" %>
+            <div class="text-center taikai">
+               <%= link_to "退会する",unsubscribe_path(@user),class:"btn btn-danger" %>
+            </div>
           </div>
-
         </div>
       <% end %>
     </div>

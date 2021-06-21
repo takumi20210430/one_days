@@ -1,31 +1,32 @@
-<footer>
+<% if user_signed_in? %>
+  <footer class="footer_sign_in">
     <div class="container">
       <ul class="justify-content-around">
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to root_path, class: ' nav-link text-light' do %>
-              <%= image_tag('footer-top.png', size:'120x120',class: 'logo') %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_dog_path do %>
-              <%= image_tag('dog.png', size:'130x130') %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_article_path do %>
-              <%= image_tag('post.png', size:'130x130') %>
-            <% end %>
-          </li>
-          <li>
-            <span id="back">
-              <a href="#">
-                <%= image_tag('up.png', size:'130x130') %>
-              </a>
-            </span>
-          </li>
-        <% else %>
-        <% end %>
+        <li>
+          <%= link_to user_path(current_user), class: ' nav-link text-light' do %>
+            <%= image_tag('footer-home.png', size:'120x120',class: 'logo') %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_dog_path do %>
+            <%= image_tag('dog.png', size:'130x130') %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_article_path do %>
+            <%= image_tag('post.png', size:'130x130') %>
+          <% end %>
+        </li>
+        <li>
+          <span id="back">
+            <a href="#">
+              <%= image_tag('up.png', size:'130x130') %>
+            </a>
+          </span>
+        </li>
       </ul>
     </div>
-</footer>
+  </footer>
+<% else %>
+  <footer class="footer_sign_out"></footer>
+<% end %>

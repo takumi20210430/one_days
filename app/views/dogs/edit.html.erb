@@ -5,7 +5,28 @@
       <%= form_with model:@dog, local: true do |f| %>
         <div cass="form">
           <div class="form-group">
-            <img id="preview_0" style="width:15%;">
+            <label for="dog name">名前</label>（１５文字以内）</br>
+            <%= f.text_field :name %>
+          </div>
+          <div class="form-group">
+            <label for="dog age">年齢</label></br>
+            <%= f.select :age, Dog.ages.keys %>
+          </div>
+          <div class="form-group">
+          <label for="dog_type_id">犬種</lebel>
+          <br><%= f.select :dog_type_id, Dog.dog_type_ids.keys %></br>
+        </div>
+          <div class="form-group">
+            <label for="dog skill">特技</label>（１５文字以内）</br>
+            <%= f.text_field :skill %>
+          </div>
+          <div class="form-group">
+            <label for="dog favorite">お気に入り</label>（１５文字以内）</br>
+            <%= f.text_field :favorite %>
+          </div>
+          <h4>犬のプロフィール写真を選択する</h4>
+          <div class="form-group">
+            <img id="preview_0" style="width:30%;">
             <%= f.attachment_field :image1 %>
             <script>
               $('#dog_image1').on('change', function (e) {
@@ -18,7 +39,7 @@
             </script>
           </div>
           <div class="form-group">
-            <img id="preview_1" style="width:15%;">
+            <img id="preview_1" style="width:30%;">
             <%= f.attachment_field :image2 %>
             <script>
               $('#dog_image2').on('change', function (e) {
@@ -31,7 +52,7 @@
             </script>
           </div>
           <div class="form-group">
-            <img id="preview_2" style="width:15%;">
+            <img id="preview_2" style="width:30%;">
             <%= f.attachment_field :image3 %>
             <script>
               $('#dog_image3').on('change', function (e) {
@@ -44,24 +65,8 @@
             </script>
           </div>
           <div class="form-group">
-            <label for="dog name">名前</label>
-            <%= f.text_field :name %>
-          </div>
-          <div class="form-group">
-            <label for="dog age">年齢</label>
-            <%= f.text_field :age %>
-          </div>
-          <div class="form-group">
-            <label for="dog skill">特技</label>
-            <%= f.text_field :skill %>
-          </div>
-          <div class="form-group">
-            <label for="dog favorite">お気に入り</label>
-            <%= f.text_field :favorite %>
-          </div>
-          <div class="form-group">
-            <label for="dog introduction">紹介</label>
-            <%= f.text_area :introduction %>
+            <label for="dog introduction">愛犬紹介</label>（１５０文字以内）</br>
+            <%= f.text_area :introduction, size:'90x5' %>
           </div>
           <div class="form-group">
             <br><%= f.submit '変更する' %></br>
