@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :baria_user, only: [:edit, :unsubscribe]
+  
   def index
     @users = User.all.page(params[:page]).per(5)
     @dog = Dog.new
@@ -55,5 +57,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :image, :introduction, :admin, :is_deleted)
+  end
+  
+  def baria_user
+    @user = User.find(params[:id])
+      unless @user.id == current_user.id || current_user.admin
+        redirect_to current_user
+      end
   end
 end

@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :baria_user, only: [:edit, :destroy]
+
   def new
     @article = Article.new
   end
@@ -50,5 +52,13 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body, :image1, :image2, :image3, :image4, :image5)
+  end
+
+  def baria_user
+    @article = Article.find(params[:id])
+    @user = @article.user
+      unless @user.id == current_user.id || current_user.admin
+        redirect_to articles_path
+      end
   end
 end

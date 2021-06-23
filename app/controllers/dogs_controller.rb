@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+   before_action :baria_user, only: [:edit, :destroy]
   def new
     @dog = Dog.new
   end
@@ -26,7 +27,6 @@ class DogsController < ApplicationController
 
   def edit
     @dog = Dog.find(params[:id])
-
   end
 
   def update
@@ -48,6 +48,14 @@ class DogsController < ApplicationController
 
   def dog_params
     params.require(:dog).permit(:name, :image1, :image2, :image3, :introduction, :age, :dog_type_id, :skill, :favorite)
+  end
+
+  def baria_user
+    @dog = Dog.find(params[:id])
+    @user = @dog.user
+      unless @user.id == current_user.id || current_user.admin
+        redirect_to dogs_path
+      end
   end
 
 end

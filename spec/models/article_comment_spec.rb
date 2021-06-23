@@ -5,7 +5,7 @@ RSpec.describe ArticleComment, type: :model do
     subject { article_comment.valid? }
 
     let(:user) { create(:user) }
-    let!(:article) { build(:article, user_id: user.id) }
+    let!(:article) { create(:article, user_id: user.id) }
     let!(:article_comment) { build(:article_comment, article_id: article.id) }
 
     context 'commentカラム' do
