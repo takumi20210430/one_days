@@ -4,11 +4,12 @@ class ArticleCommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = current_user.article_comments.new(article_comment_params)
     @comment.article_id = @article.id
-    @comment.save
-    #redirect_to article_path(article)
+    if @comment.save
+      #redirect_to article_path(article)
+    else
+      render 'show'
+    end
   end
-
-
 
   def destroy
     @article = Article.find(params[:article_id])
@@ -17,7 +18,7 @@ class ArticleCommentsController < ApplicationController
     #redirect_to article_path(params[:article_id])
   end
 
-   private
+  private
 
   def article_comment_params
     params.require(:article_comment).permit(:comment)

@@ -32,27 +32,25 @@
         </tbody>
       </table>
       <table>
-          <div id="favorite_buttons_<%= @article.id %>">
-            <%= render "favorites/favorite", article: @article %>
-          </div>
-
-          <div id="comment-count">
-            <%= render "article_comments/comment_count", article_comments: @article.article_comments %>
-          </div>
-
-            <table id="comments_area">
-              <%= render "article_comments/article_comment", article_comments: @article_comments %>
-            </table>
+        <div id="favorite_buttons_<%= @article.id %>">
+          <%= render "favorites/favorite", article: @article %>
+        </div>
+        <div id="comment-count">
+          <%= render "article_comments/comment_count", article_comments: @article.article_comments %>
+        </div>
+        <table id="comments_area">
+          <%= render "article_comments/article_comment", article_comments: @article_comments %>
+        </table>
       </table>
-    <div class="new-comment">
+      <div class="new-comment">
         <%= form_with(model:[@article, @article_comment], remote: true) do |f| %>
           <%= f.text_area :comment, size:'90x5',placeholder: "コメントをここに" %>
           <%= f.submit "送信する" %>
         <% end %>
-    </div>
-    <% if @article.user == current_user || current_user.admin %>
-      <P class="text-right"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success mx-3" %><%= link_to "削除", article_path(@article.id), method: :delete, class: "btn btn-danger mx-3" %></p>
-    <% end %>
+      </div>
+      <% if @article.user == current_user || current_user.admin %>
+        <P class="text-right"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success mx-3" %><%= link_to "削除", article_path(@article.id), method: :delete, class: "btn btn-danger mx-3" %></p>
+      <% end %>
     </div>
   </div>
 </div>

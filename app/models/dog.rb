@@ -1,6 +1,9 @@
 class Dog < ApplicationRecord
 
-  validates :name, {presence: true}
+  validates :name, presence: true, length: { maximum: 15 }
+  validates :skill, length: { maximum: 15 }
+  validates :favorite, length: { maximum: 15 }
+  validates :introduction, length: { maximum: 150 }
 
   belongs_to :user
 
@@ -20,24 +23,23 @@ class Dog < ApplicationRecord
 
   def self.looks(searches, words)
     dogs = []
-
-        if searches == "perfect_match"
-          Dog.where("name LIKE ?", "#{words}")
-        elsif searches == "forward_match"
-          Dog.where("name LIKE ?", "#{words}%")
-        elsif searches == "backword_match"
-          Dog.where("name LIKE ?", "%#{words}")
-        else
-          dog_type_ids.each do |type_id|
-            if type_id[0].include?(words)
-              temp_dogs = Dog.where("name LIKE ? OR dog_type_id LIKE ?", "%#{words}%","%#{type_id[1]}%")
-              temp_dogs.each do |temp_dog|
-                dogs.push(temp_dog)
-              end
+      if searches == "perfect_match"
+        Dog.where("name LIKE ?", "#{words}")
+      elsif searches == "forward_match"
+        Dog.where("name LIKE ?", "#{words}%")
+      elsif searches == "backword_match"
+        Dog.where("name LIKE ?", "%#{words}")
+      else
+        dog_type_ids.each do |type_id|
+          if type_id[0].include?(words)
+            temp_dogs = Dog.where("name LIKE ? OR dog_type_id LIKE ?", "%#{words}%","%#{type_id[1]}%")
+            temp_dogs.each do |temp_dog|
+              dogs.push(temp_dog)
+            end
           end
         end
-      dogs
-    end
+      end
+    dogs
   end
 
 

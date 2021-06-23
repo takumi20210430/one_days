@@ -1,0 +1,33 @@
+ja:
+  devise:
+    sessions:
+      user:
+        signed_in: 'ログインしました。'
+
+
+  activerecord:
+    models:
+      user: 'ユーザー'
+      dog: '犬'
+      article: '記事'
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+
+    attributes:
+      user:
+        password: パスワード
+        email: メールアドレス
+        name: ・名前
+        introduction: ・自己紹介
+      dog:
+        name: ・名前
+        introduction: ・紹介
+        price: ・特技
+        favorite: ・お気に入り
+      article:
+        title: ・タイトル
+        body: ・投稿内容

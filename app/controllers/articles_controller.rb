@@ -6,8 +6,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
-    @article.save
-    redirect_to user_path(@article.user.id)
+    if @article.save
+      redirect_to user_path(@article.user.id)
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -30,8 +33,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(article_params)
-    redirect_to article_path(@article)
+    if @article.update(article_params)
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

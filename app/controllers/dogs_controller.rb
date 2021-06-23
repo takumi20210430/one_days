@@ -6,8 +6,11 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.user_id = current_user.id
-    @dog.save
-    redirect_to dog_path(@dog)
+    if @dog.save
+      redirect_to dog_path(@dog)
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -28,8 +31,11 @@ class DogsController < ApplicationController
 
   def update
     @dog = Dog.find(params[:id])
-    @dog.update(dog_params)
-    redirect_to dog_path(@dog.id)
+    if @dog.update(dog_params)
+      redirect_to dog_path(@dog.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

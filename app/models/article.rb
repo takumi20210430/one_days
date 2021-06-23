@@ -1,15 +1,17 @@
 class Article < ApplicationRecord
 
-  belongs_to :user
+  validates :title, presence: true,length: { maximum: 30 }
+  validates :body, presence: true,length: { maximum: 1000 }
 
+  belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :article_comments, dependent: :destroy
 
-   attachment :image1
-   attachment :image2
-   attachment :image3
-   attachment :image4
-   attachment :image5
+  attachment :image1
+  attachment :image2
+  attachment :image3
+  attachment :image4
+  attachment :image5
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
@@ -29,7 +31,6 @@ class Article < ApplicationRecord
     else
       @article = Article.where("title LIKE ?", "%#{words}%")
     end
-
   end
 
 
