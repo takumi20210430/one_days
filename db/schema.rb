@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_074754) do
     t.string "encrypted_password", default: "", null: false
     t.text "image_id"
     t.string "introduction"
-    t.boolean "is_deleted", default: false
     t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
