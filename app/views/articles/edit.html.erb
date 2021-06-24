@@ -6,7 +6,10 @@
       <%= form_with model:@article, local: true do |f| %>
         <div cass="form">
           <div class="form-group">
-            <label for="article title">タイトル</label>（３０文字以内）</br>
+            <label for="article title">
+              タイトル
+              <em>必須</em>
+            </label>（３０文字以内）</br>
             <%= f.text_field :title %>
           </div>
           <h4>写真を選択する</h4>
@@ -76,7 +79,10 @@
             </script>
           </div>
           <div class="form-group">
-            <label for="article body">投稿内容</label>（１０００文字以内）
+            <label for="article body">
+              投稿内容
+              <em>必須</em>
+            </label>（１０００文字以内）
             <%= f.text_area :body, size: '90x5' %>
           </div>
           <div class="form-group">

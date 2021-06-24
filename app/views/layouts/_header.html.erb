@@ -1,33 +1,28 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffffff;">
     <div class="container">
-       <%= image_tag('theme.png', size:'180x180', class: 'logo') %>
-      <span>
-        <% if user_signed_in? %>
-        <%= link_to user_path(current_user), class: ' nav-link text-light' do %>
-          <%= image_tag('header-home.png', size:'150x150', class: 'logo') %>
-        <% end %>
+      <%= link_to root_path, class: ' nav-link text-light' do %>
+        <h2 class="title">ONE DAYS</h2>
       <% end %>
-      </span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto ">
           <% if user_signed_in? %>
             <% if current_user.admin? %>
-              <li><%= link_to ' ユーザー一覧',users_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ユーザー一覧',users_path, class: 'class="btn btn-radius-gradient"' %></li>
               <li><%= link_to ' 犬一覧',dogs_path, class: 'nav-link text-dark' %></li>
               <li><%= link_to ' 投稿一覧',articles_path, class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' 新着投稿',user_path(current_user), class: 'nav-link text-dark' %></li>
               <li><%= link_to ' ランキング',homes_ranking_path, class: 'nav-link text-dark'%></li>
+              <li><%= link_to ' マイページ',user_path(current_user), class: 'nav-link text-dark' %></li>
               <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete , class: 'nav-link text-dark' %></li>
             <% else %>
-              <li><%= link_to ' 新着投稿',root_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' ランキング',homes_ranking_path %></li>
               <li><%= link_to ' 投稿一覧',articles_path, class: 'nav-link text-dark' %></li>
-              <li><%= link_to ' ランキング',homes_ranking_path, class: 'nav-link text-dark' %></li>
               <li><%= link_to ' ユーザー一覧',users_path, class: 'nav-link text-dark' %></li>
               <li><%= link_to ' 犬一覧', dogs_path, class: 'nav-link text-dark' %></li>
+              <li><%= link_to ' マイページ',user_path(current_user), class: 'nav-link text-dark' %></li>
               <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete , class: 'nav-link text-dark' %></li>
             <% end %>
           <% else %>

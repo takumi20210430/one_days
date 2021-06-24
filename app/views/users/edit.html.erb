@@ -6,7 +6,10 @@
       <%= form_with model:@user, local: true do |f| %>
         <div cass="form">
           <div class="form-group">
-            <label for="user name">名前</label>（１５文字以内）</br>
+            <label for="user name">
+              名前
+              <em>必須</em>
+            </label>（１５文字以内）</br>
             <%= f.text_field :name %>
           </div>
           <h4>プロフィール写真を選択する</h4>

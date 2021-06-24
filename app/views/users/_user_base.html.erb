@@ -3,17 +3,19 @@
 <table class="table info">
   <tbody>
     <tr>
-      <th>名前</th>
-      <th><%= user.name %></th>
+      <th colspan="2"><h5>名前</h5>
+        <%= user.name %>
+      </th>
     </tr>
-    <% user.dogs.each do |dog| %>
-      <tr>
-        <th>pet_dogs</th>
-        <th><%= dog.name %>(<%= dog.dog_type_id %>)</th>
-      </tr>
-    <% end %>
     <tr>
-      <th colspan="2">自己紹介</br>
+      <th colspan="2"><h5>愛犬</h5>
+        <% user.dogs.each do |dog| %>
+          <i class="fas fa-dog"></i><%= dog.name %>(<%= dog.dog_type_id %>)</br>
+        <% end %>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="2"><h5>自己紹介</h5>
         <%= user.introduction %>
       </th>
     </tr>
@@ -31,10 +33,9 @@
     </tr>
     <% if user == current_user %>
       <tr>
-        <th>
-          <%=link_to "フォロー新着投稿(30件)", follows_index_user_path(user.id) %></br>
+        <th colspan="2">
+          <%=link_to "フォローユーザー新着投稿", follows_index_user_path(user.id) %></br>
         </th>
-        <th></th>
       </tr>
     <% end %>
   </tbody>

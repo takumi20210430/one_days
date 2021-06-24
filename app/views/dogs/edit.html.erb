@@ -6,7 +6,10 @@
       <%= form_with model:@dog, local: true do |f| %>
         <div cass="form">
           <div class="form-group">
-            <label for="dog name">名前</label>（１５文字以内）</br>
+            <label for="dog name">
+              名前
+              <em>必須</em>
+            </label>（１５文字以内）</br>
             <%= f.text_field :name %>
           </div>
           <div class="form-group">
