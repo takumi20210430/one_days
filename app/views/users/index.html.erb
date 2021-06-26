@@ -23,9 +23,9 @@
               <%= user.articles.count %>
             </li>
             <div class="user-catalog">
-              <li id="follow_counts_<%= user.id %>">
               フォロワー数：
-              <%= render "follow_count", user: user %>
+              <li id="follow_counts_<%= user.id %>">
+                <%= render "follow_count", user: user %>
               </li>
             </div>
             <div class="user-catalog">
