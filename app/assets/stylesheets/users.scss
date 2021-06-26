@@ -25,3 +25,24 @@
 .admin-info{
   padding-top: 20px;
 }
+
+.user-abridgement{
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.follow-catalog{
+  margin-left: 110px;
+  width: 230px;
+}
+.abridgement4{
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.not-user{
+  margin-left: 200px;
+}

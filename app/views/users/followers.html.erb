@@ -1,27 +1,27 @@
 <div class="container-xl-12">
   <div class="row">
+    <h2 class="offset-1">フォローワー一覧</h2>
     <div class="col-md-12 user-index">
-      <h2>フォロワー一覧</h2>
       <% if @followers.empty? %>
-        <%= "ユーザーはいません" %>
+        <h1 class="not-user">ユーザーがいません</h1>
       <% else %>
         <div class="scroll-list jscroll">
           <% @followers.each do |follower| %>
-            <ul class="justify-content-around align-items-center">
-              <li>
+            <ul class="align-items-center">
+              <li class="follow-catalog">
                 <%= link_to user_path(follower.id) do %>
                   <%= attachment_image_tag follower, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'100x100' %>
                 <% end %>
               </li>
-              <li>
+              <li class="follow-catalog abridgement4">
                 名前：
                 <%= link_to follower.name, user_path(follower.id) %>
               </li>
-              <li>
+              <li class="follow-catalog">
                 dog数：
                 <%= follower.dogs.count %>匹
               </li>
-              <li>
+              <li class="follow-catalog">
                 投稿数：
                 <%= follower.articles.count %>
               </li>

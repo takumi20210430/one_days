@@ -11,7 +11,6 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-
     <main>
       <%= render 'layouts/search' %>
       <%= yield %>
@@ -20,12 +19,12 @@
         $(document).ready(function(){
           $('.slider').slick({
             autoplay:true, // 自動再生を設定
-            autoplaySpeed:2000, // スライド切り替えの時間を設定
+            autoplaySpeed:3000, // スライド切り替えの時間を設定
             dots: true
           });
         });
       </script>
     </main>
-      <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

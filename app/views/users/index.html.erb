@@ -1,38 +1,42 @@
 <div class="container-xl-12">
   <div class="row">
+    <h2 class="offset-1">ユーザー一覧</h2>
     <div class="col-md-12 user-index">
-      <h2>ユーザー一覧</h2>
       <div class="scroll-list jscroll">
         <% @users.each do |user| %>
-          <ul class="justify-content-around align-items-center">
-            <li>
+          <ul class=" align-items-center">
+            <li class="user-catalog">
               <%= link_to user_path(user.id) do %>
                 <%= attachment_image_tag user, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'100x100',class: "text-center" %>
               <% end %>
             </li>
-            <li>
+            <li class="user-catalog abridgement3">
               名前：
               <%= link_to user.name, user_path(user.id) %>
             </li>
-            <li>
+            <li class="user-catalog">
               dog数：
               <%= user.dogs.count %>匹
             </li>
-            <li>
+            <li class="user-catalog">
               投稿数：
               <%= user.articles.count %>
             </li>
-            <li id="follow_counts_<%= user.id %>">
+            <div class="user-catalog">
+              <li id="follow_counts_<%= user.id %>">
               フォロワー数：
               <%= render "follow_count", user: user %>
-            </li>
-            <% if user == current_user %>
-              <li>myアカウント</li>
-            <% else %>
-              <li id="follow_buttons_<%= user.id %>">
-                <%= render "follow", user: user %>
               </li>
-            <% end %>
+            </div>
+            <div class="user-catalog">
+              <% if user == current_user %>
+                <li>myアカウント</li>
+              <% else %>
+                <li id="follow_buttons_<%= user.id %>">
+                  <%= render "follow", user: user %>
+                </li>
+              <% end %>
+            </div>
           </ul>
         <% end %>
         <%= paginate @users %>
