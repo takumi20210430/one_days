@@ -20,26 +20,26 @@ class Dog < ApplicationRecord
   １７: 17, １８: 18, １９: 19, ２０: 20, ２１: 21, ２２: 22, ２３: 23, ２４: 24, ２５: 25, ２６: 26, ２７: 27, ２８: 28, ２９: 29, ３０以上: 30
   }
 
-
   def self.looks(searches, words)
-    dogs = []
-      if searches == "perfect_match"
-        Dog.where("name LIKE ?", "#{words}")
-      elsif searches == "forward_match"
-        Dog.where("name LIKE ?", "#{words}%")
-      elsif searches == "backword_match"
-        Dog.where("name LIKE ?", "%#{words}")
-      else
-        dog_type_ids.each do |type_id|
-          if type_id[0].include?(words)
-            temp_dogs = Dog.where("name LIKE ? OR dog_type_id LIKE ?", "%#{words}%","%#{type_id[1]}%")
-            temp_dogs.each do |temp_dog|
-              dogs.push(temp_dog)
-            end
+    if searches == "perfect_match"
+      Dog.where("name LIKE ?", "#{words}")
+    elsif searches == "forward_match"
+      Dog.where("name LIKE ?", "#{words}%")
+    elsif searches == "backword_match"
+      Dog.where("name LIKE ?", "%#{words}")
+    else
+
+      dog_ids = Dog.where("name LIKE ?", "%#{words}%").pluck(:id)
+      dog_type_ids.each do |type_id|
+        # 'hoge'.include?('') # => trueのためwordsの空チェックをしている
+        if words.present? && type_id[0].include?(words)
+          Dog.where("dog_type_id = ?", type_id[1]).pluck(:id).each do |dog_id|
+            dog_ids << dog_id
           end
         end
       end
-    dogs
+      Dog.find(dog_ids.uniq)
+    end
   end
 
 
