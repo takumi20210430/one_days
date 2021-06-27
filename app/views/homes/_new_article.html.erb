@@ -1,11 +1,12 @@
   <div class="row col-md-10 col-md-offset-1 offset-1">
     <h1>新着投稿一覧</h1>
-    <table class="table">
+    <table class="table table1">
       <thead>
         <th></th>
         <th>いいね数</th>
         <th>タイトル</th>
         <th>image</th>
+        <th></th>
         <th>コメント数</th>
         <th>投稿者</th>
       </thead>
@@ -15,9 +16,10 @@
 					  <td><%= i %></td>
 					  <td><%= "#{article.favorites.count} いいね" %></td>
           	<td class="abridgement"><%= link_to article.title,article_path(article.id) %></td>
-          	<td><%= attachment_image_tag(article, :image1, :fill, 200, 150) %></td>
-          	<td><%= "#{article.article_comments.count} 件" %></td>
-          	<td class="abridgement"><%= link_to article.user.name, user_path(article.user.id) %></td>
+          	<td class="ml-3"><%= attachment_image_tag(article, :image1, :fill, 200, 150) %></td>
+          	<td></td>
+          	<td class="ml-3"><%= "#{article.article_comments.count} 件" %></td>
+          	<td class="abridgement td-width"><%= link_to article.user.name, user_path(article.user.id) %></td>
           </tr>
         <% end %>
       </tbody>
