@@ -158,3 +158,13 @@ em{
   width: 150px;
 }
 
+@media screen and (max-width: 480px) {
+.footer_sign_in {
+  background-color:#ff914d;
+  height:120px;
+  position: fixed;
+  bottom: 0;
+  width: 60%
+}
+}
+

@@ -1,21 +1,21 @@
 <h2>アカウント情報</h2>
 <%= attachment_image_tag user, :image, :fill, 130, 130, fallback: "no_image.jpg",size:'130x130', class: "center" %>
-<table class="table info">
+<table class="table info text-break">
   <tbody>
     <tr>
-      <th colspan="2"><h5>名前</h5>
+      <th colspan="2">名前</br>
         <%= user.name %>
       </th>
     </tr>
     <tr>
-      <th colspan="2"><h5>愛犬</h5>
+      <th colspan="2">愛犬</br>
         <% user.dogs.each do |dog| %>
           <i class="fas fa-dog"></i><%= dog.name %>(<%= dog.dog_type_id %>)</br>
         <% end %>
       </th>
     </tr>
     <tr>
-      <th colspan="2"><h5>自己紹介</h5>
+      <th colspan="2">自己紹介</br>
         <%= user.introduction %>
       </th>
     </tr>
