@@ -19,7 +19,9 @@
 
 .center {
     /* slickでslider化するとimgがblockになるのでmarginで中央寄せにしないといけない */
-    margin: 0 auto;
+
+    width: 80%;
+    height: 300px;
 }
 
 ul{
@@ -157,14 +159,22 @@ em{
   margin-left: 50px;
   width: 150px;
 }
-
-@media screen and (max-width: 480px) {
-.footer_sign_in {
-  background-color:#ff914d;
-  height:120px;
-  position: fixed;
-  bottom: 0;
-  width: 60%
+.logo{
+  width:70%;
+  height:110px;
 }
+.logo1{
+  width:70%;
+  height:130px;
+  padding-top:10px;
+}
+
+//タブレットサイズにレスポンシブ対応
+@media screen and (max-width: 768px) {
+
+}
+//スマホサイズにレスポンシブ対応
+@media screen and (max-width: 425px) {
+
 }
 
