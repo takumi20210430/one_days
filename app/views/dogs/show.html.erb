@@ -1,14 +1,14 @@
 <div class="container py-5">
-	<h5 class="dog-name"><%= @dog.name %> のページ</h5>
-	<div class="row">
-	  <div class= "col-5">
+	<h5 class="text-center"><%= @dog.name %> のページ</h5>
+	<div class="row" id="article-show">
+	  <div class= "col-5 mx-auto">
 	    <ul class="slider">
-        <li><%= attachment_image_tag @dog, :image1, :fill,300,250, fallback: "no_image.jpg",size:'300x250', class: "center" %></li>
+        <li><%= attachment_image_tag @dog, :image1, fallback: "no_image.jpg", class: "center mx-auto article-image2" %></li>
         <% if !@dog.image2.blank? %>
-          <li><%= attachment_image_tag @dog, :image2, :fill,300,250, class: "center" %></li>
+          <li><%= attachment_image_tag @dog, :image2, class: "center mx-auto article-image2" %></li>
         <% end %>
         <% if !@dog.image3.blank? %>
-          <li><%= attachment_image_tag @dog, :image3, :fill,300,250, class: "center" %></li>
+          <li><%= attachment_image_tag @dog, :image3, class: "center mx-auto article-image2" %></li>
         <% end %>
 	  </div>
 		<div class="col-7 mx-auto">
@@ -40,7 +40,7 @@
         </tbody>
       </table>
       <% if @dog.user == current_user || current_user.admin %>
-        <P class="text-right"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3" %></p>
+        <P class="text-right"><%= link_to " 編集する", edit_dog_path(@dog.id), class: "btn btn-success mx-3 btn-3" %><%= link_to "削除", dog_path(@dog.id), method: :delete, class: "btn btn-danger mx-3 btn-3" %></p>
       <% end %>
     </div>
   </div>

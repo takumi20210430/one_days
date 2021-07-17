@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-5 px-sm-0 mx-auto">
-      <h1>愛犬編集画面</h1>
+      <h1 class="font-size1">愛犬編集画面</h1>
       <%= form_with model:@dog, local: true do |f| %>
         <div cass="form">
           <div class="form-group">
@@ -28,7 +28,7 @@
             <label for="dog favorite">お気に入り</label>（１５文字以内）</br>
             <%= f.text_field :favorite %>
           </div>
-          <h4>犬のプロフィール写真を選択する</h4>
+          <h4 class="dog-img-select">犬のプロフィール写真を選択する</h4>
           <div class="form-group">
             <img id="preview_0" style="width:30%;">
             <%= f.attachment_field :image1 %>

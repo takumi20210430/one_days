@@ -17,6 +17,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
 .center {
     /* slickでslider化するとimgがblockになるのでmarginで中央寄せにしないといけない */
 
@@ -137,14 +138,14 @@ em{
 }
 
 .abridgement2{
-  max-width: 130px;
+  max-width: 20%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .abridgement3{
-  max-width: 150px;
+  max-width: 15%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -152,12 +153,10 @@ em{
 
 
 .catalog{
-  margin-left: 100px;
-  width: 130px;
+  width: 20%;
 }
 .user-catalog{
-  margin-left: 50px;
-  width: 150px;
+  width: 15%;
 }
 .logo{
   width:70%;
@@ -169,9 +168,75 @@ em{
   padding-top:10px;
 }
 
+
+.article-img{
+  width: 100%;
+  height: 200px;
+}
+
+.btn-5{
+  width: 70%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dog-img{
+  width: 50%;
+  height: 80px;
+}
+.card{
+  width: 100%;
+}
+.new-comment textarea{
+  width: 100%;
+  height: 200px;
+}
+.form-group textarea{
+  width: 100%;
+  height: 140px;
+}
+.article-image2{
+  width: 80%;
+  height: 200px;
+}
+
+.img2{
+  width:60%;
+  height: 80px;
+}
+
 //タブレットサイズにレスポンシブ対応
 @media screen and (max-width: 768px) {
+  #article-show{
+    display: block;
+  }
+  .btn-3{
+    width: 70%;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .font-size1{
+    width: 120%;
+    font-size: 27px;
+  }
 
+  .dog-img-select{
+    font-size: 90%;
+
+  }
+  .catalog{
+  font-size: 4px;
+  }
+  .user-catalog{
+    font-size: 4px;
+  }
+  .follow{
+    font-size: 3px;
+  }
+  .img2{
+  height: 30px;
+}
 }
 //スマホサイズにレスポンシブ対応
 @media screen and (max-width: 425px) {
