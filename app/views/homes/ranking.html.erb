@@ -1,15 +1,13 @@
 <div class="rank-container">
   <div class="rank-box-center">
     <div class="row col-md-10 col-md-offset-1 offset-1">
-      <h1>投稿記事いいねランキング</h1>
+      <h1 class="font-size1">投稿いいねランキング</h1>
       <table class="table table1">
         <thead>
           <th>順位</th>
           <th>いいね数</th>
           <th>タイトル</th>
           <th>image</th>
-          <th></th>
-          <th>コメント数</th>
           <th>投稿者</th>
         </thead>
 			  <tbody>
@@ -18,8 +16,7 @@
 					    <td><%= i %>位</td>
 					    <td><%= "#{article.favorites.count} いいね" %></td>
           	  <td class="abridgement"><%= link_to article.title,article_path(article.id) %></td>
-          	  <td><%= attachment_image_tag(article, :image1, :fill, 200, 150) %></td>
-          	  <td></td>
+          	  <td><%= attachment_image_tag(article, :image1,class: 'img2 mx-auto') %></td>
           	  <td><%= "#{article.article_comments.count} 件" %></td>
           	  <td class="abridgement"><%= link_to article.user.name, user_path(article.user.id) %></td>
             </tr>

@@ -13,6 +13,15 @@
 }
 
 .table1{
+  width: 100%;
   table-layout: fixed;
+  height: 80px;
+}
+.table1 th{
+  width: 20%;
+}
+
+.table1 td{
+  width: 20%;
 }
 

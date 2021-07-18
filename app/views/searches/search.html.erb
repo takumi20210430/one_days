@@ -3,22 +3,22 @@
     <div class="col-md-12">
       <% if @range == "User" %>
         <h2>Users search for "<%= @word %>"</h2>
-        <table class='table'>
+        <table class='table table2'>
           <thead>
             <tr>
-              <th>name</th>
-              <th>dog数</th>
-              <th>投稿数</th>
-              <th>フォロワー数</th>
-              <th colspan="3"></th>
+              <th colspan="2">name</th>
+              <th>dog</th>
+              <th>投稿</th>
+              <th>フォロワー</th>
+              <th colspan="5"></th>
             </tr>
           </thead>
           <tbody>
             <% @users.each do |user| %>
               <tr>
-                <td class="abridgement3">
+                <td colspan="2" class="abridgement3">
                   <%= link_to user_path(user.id) do %>
-                    <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                    <%= attachment_image_tag user, :image, fallback: "no_image.jpg",class:"img4" %>
                     <%= user.name %>
                   <% end %>
                 </td>
@@ -26,12 +26,12 @@
                   <%= user.dogs.count %>匹
                 </td>
                 <td>
-                  <%= user.articles.count %>
+                  <%= user.articles.count %>本
                 </td>
                 <td>
                   <%= user.followers.count %>人
                 </td>
-                <td id="follow_buttons_<%= user.id %>">
+                <td colspan="5" id="follow_buttons_<%= user.id %>">
                   <%= render "users/follow", user: user %>
                 </td>
               </tr>
@@ -40,22 +40,21 @@
         </table>
       <% elsif @range == "Dog" %>
         <h2>Dogs search for "<%= @word %>"</h2>
-        <table class='table'>
+        <table class='table table2'>
           <thead>
             <tr>
-              <th>name</th>
+              <th colspan="2">name</th>
               <th>犬種</th>
               <th>age</th>
               <th>飼い主</th>
-              <th colspan="3"></th>
             </tr>
           </thead>
           <tbody>
             <% @dogs.each do |dog| %>
               <tr>
-                <td class="abridgement3">
+                <td colspan="2" class="abridgement3">
                   <%= link_to dog_path(dog.id) do %>
-                    <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                    <%= attachment_image_tag current_user, :image, fallback: "no_image.jpg",class:"img4" %>
                     <%= dog.name %></br>
                   <% end %>
                 </td>
@@ -71,7 +70,7 @@
       <% else %>
         <div class="container">
           <h3>投稿一覧</h3>
-          <div class="row row-cols-1 row-cols-md-4">
+          <div class="row row-cols-1 row-cols-md-4 mx-auto">
             <% @articles.each do |article| %>
               <div class="col mb-4">
                 <div class="card">
@@ -80,7 +79,7 @@
                   </div>
                   <p><%= "#{article.article_comments.count} コメント" %></p>
                   <%= link_to article_path(article.id) do %>
-                    <%= attachment_image_tag(article, :image1, :fill, 200, 150, fallback: "no_image.jpg",size:'200x150' ) %></br>
+                    <%= attachment_image_tag(article, :image1,fallback: "no_image.jpg",class: 'article-img' ) %></br>
                     <div class="abridgement">
                       投稿者 <%= article.user.name %>
                     </div>

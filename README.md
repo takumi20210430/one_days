@@ -23,9 +23,10 @@
 
 ## 設計書
 
-ER図　https://app.diagrams.net/#G1t2fHMskCdFxa0bZUkOfd2P55TQx7IWZu
-table定義書　https://drive.google.com/file/d/1rFX_4bH6Sb79OJR9DqnaWAFe0yT9stOR/view?usp=sharing
+ER図　https://app.diagrams.net/#G1t2fHMskCdFxa0bZUkOfd2P55TQx7IWZu</br>
+table定義書　https://drive.google.com/file/d/1rFX_4bH6Sb79OJR9DqnaWAFe0yT9stOR/view?usp=sharing</br>
 アプリ詳細図　https://drive.google.com/file/d/1glcbHqa-2S6Q-pkb2DS92oMtd8x_1LSU/view?usp=sharing
+
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1lMVClMhoSazvteS7KynkTgd14H0-XTXil0Xt3UGK8do/edit?usp=sharing
 

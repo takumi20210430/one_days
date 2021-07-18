@@ -212,6 +212,22 @@ em{
     margin-right: 10px;
     margin-top: 10px;
   }
+.img4{
+  width: 60px;
+  height: 60px;
+}
+.table2{
+  width: 90%;
+  table-layout: fixed;
+  height: 60px;
+}
+.table2 th{
+  width: 10%;
+}
+
+.table2 td{
+  width: 10%;
+}
 
 //タブレットサイズにレスポンシブ対応
 @media screen and (max-width: 768px) {
@@ -243,7 +259,7 @@ em{
     font-size: 3px;
   }
   .img2{
-  height: 30px;
+  height: 50px;
   }
   .img3{
   width:70%;
@@ -251,14 +267,53 @@ em{
   }
   .search select{
     width: 50%;
-    display:inline;
+    display: inline;
   }
-  .search text_field{
-
+  #word {
+    width: 60%;
+    display: inline;
   }
+  .table1 th{
+    font-size: 5px;
+    padding: 0;
+  }
+  .table1 td{
+    font-size: 5px;
+    padding: 0;
+  }
+  .table2 th{
+    font-size: 5px;
+    padding: 0;
+  }
+  .table2 td{
+    font-size: 5px;
+    padding: 0;
+  }
+  .img4{
+  width: 30px;
+  height: 30px;
+}
 }
 //スマホサイズにレスポンシブ対応
 @media screen and (max-width: 425px) {
+  .img2{
+  height: 30px;
+  }
 
+  .table1 th{
+    font-size: 1px;
+
+  }
+  .table1 td{
+    font-size: 1px;
+  }
+  .table2 th{
+    font-size: 1px;
+    padding: 0;
+  }
+  .table2 td{
+    font-size: 1px;
+    padding: 0;
+  }
 }
 
