@@ -1,5 +1,5 @@
 <div class="container py-5">
-  <h5 class="text-center"><%= link_to @article.user.name,user_path(@article.user.id) %>さんの投稿</h5>
+  <h5 class="text-center mb-4"><%= link_to @article.user.name,user_path(@article.user.id) %>さんの投稿</h5>
 	<div class="row" id="article-show">
     <div class="col-5 mx-auto">
       <ul class="slider">
@@ -49,7 +49,7 @@
         <% end %>
       </div>
       <% if @article.user == current_user || current_user.admin %>
-        <P class="text-right"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success btn-5" %><%= link_to "削除", article_path(@article.id), method: :delete, class: "btn btn-danger btn-5" %></p>
+        <P class="text-right"><%= link_to " 編集する", edit_article_path(@article.id), class: "btn btn-success btn-3" %><%= link_to "削除", article_path(@article.id), method: :delete, class: "btn btn-danger btn-3" %></p>
       <% end %>
     </div>
   </div>

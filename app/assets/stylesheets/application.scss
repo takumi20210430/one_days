@@ -205,6 +205,11 @@ em{
   height: 80px;
 }
 
+.btn-3{
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
 //タブレットサイズにレスポンシブ対応
 @media screen and (max-width: 768px) {
   #article-show{
@@ -221,7 +226,7 @@ em{
     font-size: 27px;
   }
 
-  .dog-img-select{
+  .img-select{
     font-size: 90%;
 
   }
