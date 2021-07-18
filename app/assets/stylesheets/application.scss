@@ -204,7 +204,10 @@ em{
   width:60%;
   height: 80px;
 }
-
+.img3{
+  width:40%;
+  height: 80px;
+}
 .btn-3{
     margin-right: 10px;
     margin-top: 10px;
@@ -241,7 +244,18 @@ em{
   }
   .img2{
   height: 30px;
-}
+  }
+  .img3{
+  width:70%;
+  height: 80px;
+  }
+  .search select{
+    width: 50%;
+    display:inline;
+  }
+  .search text_field{
+
+  }
 }
 //スマホサイズにレスポンシブ対応
 @media screen and (max-width: 425px) {
