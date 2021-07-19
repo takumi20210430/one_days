@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffffff;">
     <div class="container">
-      <%= link_to root_path, class: ' nav-link text-light' do %>
+      <%= link_to root_path, class: 'btn nav-link text-light' do %>
         <h2 class="title">ONE DAYS</h2>
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,23 +11,23 @@
         <ul class="navbar-nav ml-auto ">
           <% if user_signed_in? %>
             <% if current_user.admin? %>
-              <li><%= link_to ' ユーザー一覧',users_path, class: 'btn-square-raised-admin' %></li>
-              <li><%= link_to ' 犬一覧',dogs_path, class: 'btn-square-raised-admin' %></li>
-              <li><%= link_to ' 投稿一覧',articles_path, class: 'btn-square-raised-admin' %></li>
-              <li><%= link_to ' ランキング',homes_ranking_path, class: 'btn-square-raised-admin'%></li>
-              <li><%= link_to ' マイページ',user_path(current_user), class: 'btn-square-raised-admin' %></li>
-              <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete , class: 'btn-square-raised-admin' %></li>
+              <li><%= link_to ' ユーザー一覧',users_path, class: 'btn btn-square-raised-admin' %></li>
+              <li><%= link_to ' 犬一覧',dogs_path, class: 'btn btn-square-raised-admin' %></li>
+              <li><%= link_to ' 投稿一覧',articles_path, class: 'btn btn-square-raised-admin' %></li>
+              <li><%= link_to ' ランキング',homes_ranking_path, class: 'btn btn-square-raised-admin'%></li>
+              <li><%= link_to ' マイページ',user_path(current_user), class: 'btn btn-square-raised-admin' %></li>
+              <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete , class: 'btn btn-square-raised-admin' %></li>
             <% else %>
-              <li><%= link_to ' ランキング',homes_ranking_path, class: 'btn-square-raised' %></li>
-              <li><%= link_to ' 投稿一覧',articles_path, class: 'btn-square-raised' %></li>
-              <li><%= link_to ' ユーザー一覧',users_path, class: 'btn-square-raised' %></li>
-              <li><%= link_to ' 犬一覧', dogs_path, class: 'btn-square-raised' %></li>
-              <li><%= link_to ' マイページ',user_path(current_user), class: 'btn-square-raised' %></li>
-              <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete , class: 'btn-square-raised' %></li>
+              <li><%= link_to ' ランキング',homes_ranking_path, class: 'btn btn-square-raised' %></li>
+              <li><%= link_to ' 投稿一覧',articles_path, class: 'btn btn btn-square-raised' %></li>
+              <li><%= link_to ' ユーザー一覧',users_path, class: 'btn btn-square-raised' %></li>
+              <li><%= link_to ' 犬一覧', dogs_path, class: 'btn btn-square-raised' %></li>
+              <li><%= link_to ' マイページ',user_path(current_user), class: 'btn btn-square-raised' %></li>
+              <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete , class: 'btn btn-square-raised' %></li>
             <% end %>
           <% else %>
-            <li><%= link_to ' 新規登録', new_user_registration_path, class: 'btn-square-raised' %></li>
-            <li><%= link_to ' ログイン', new_user_session_path, class: 'btn-square-raised' %></li>
+            <li><%= link_to ' 新規登録', new_user_registration_path, class: 'btn btn-square-raised' %></li>
+            <li><%= link_to ' ログイン', new_user_session_path, class: 'btn btn-square-raised' %></li>
           <% end %>
         </ul>
       </div>

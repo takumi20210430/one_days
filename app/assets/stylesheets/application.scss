@@ -19,9 +19,9 @@
 
 
 .center {
-    /* slickでslider化するとimgがblockになるのでmarginで中央寄せにしないといけない */
-    width: 80%;
-    height: 300px;
+  /* slickでslider化するとimgがblockになるのでmarginで中央寄せにしないといけない */
+  width: 80%;
+  height: 300px;
 }
 
 ul{
@@ -265,12 +265,14 @@ em{
   #article-show{
     display: block;
   }
+  
   .btn-3{
     width: 70%;
     display: inline-block;
     margin-right: 10px;
     margin-top: 10px;
   }
+  
   .font-size1{
     width: 120%;
     font-size: 27px;
@@ -281,49 +283,61 @@ em{
 
   }
   .catalog{
-  font-size: 4px;
+    font-size: 4px;
   }
+  
   .user-catalog{
     font-size: 4px;
   }
+  
   .follow{
     font-size: 3px;
   }
+  
   .img2{
   height: 50px;
   }
+  
   .img3{
   width:70%;
   height: 80px;
   }
+  
   .search select{
     width: 50%;
     display: inline;
   }
+  
   #word {
     width: 60%;
     display: inline;
   }
+  
   .table1 th{
     font-size: 5px;
     padding: 0;
   }
+  
   .table1 td{
     font-size: 5px;
     padding: 0;
   }
+  
   .table2 th{
     font-size: 5px;
     padding: 0;
   }
+  
   .table2 td{
     font-size: 5px;
     padding: 0;
   }
+  
   .img4{
   width: 30px;
   height: 30px;
   }
+  
 }
 //スマホサイズにレスポンシブ対応
 @media screen and (max-width: 425px) {
@@ -333,18 +347,21 @@ em{
 
   .table1 th{
     font-size: 1px;
-
   }
+  
   .table1 td{
     font-size: 1px;
   }
+  
   .table2 th{
     font-size: 1px;
     padding: 0;
   }
+  
   .table2 td{
     font-size: 1px;
     padding: 0;
   }
+  
 }
 
