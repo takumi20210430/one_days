@@ -4,7 +4,7 @@
     <div class="col-md-12 user-index">
       <div class="scroll-list jscroll">
         <% @users.each do |user| %>
-          <ul class=" align-items-center">
+          <ul class=" align-items-center user-center">
             <li class="user-catalog">
               <%= link_to user_path(user.id) do %>
                 <%= attachment_image_tag user, :image, fallback: "no_image.jpg",class: "text-center img2" %>

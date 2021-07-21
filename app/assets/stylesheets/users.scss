@@ -47,3 +47,19 @@
 .not-user{
   margin-left: 200px;
 }
+
+.user-center{
+  text-align: center;
+}
+
+//スマホサイズにレスポンシブ対応
+@media screen and (max-width: 425px) {
+  .user-index{
+    ul{
+      flex-direction: column;
+    }
+  }
+  .user-catalog {
+    width: 100%;
+  }
+}
