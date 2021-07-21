@@ -16,7 +16,7 @@
 					    <td><%= i %>位</td>
 					    <td><%= "#{article.favorites.count} いいね" %></td>
           	  <td class="abridgement"><%= link_to article.title,article_path(article.id) %></td>
-          	  <td><%= attachment_image_tag(article, :image1,class: 'img2 mx-auto') %></td>
+          	  <td><%= attachment_image_tag(article, :image1,class: 'img3 mx-auto') %></td>
           	  <td><%= "#{article.article_comments.count} 件" %></td>
           	  <td class="abridgement"><%= link_to article.user.name, user_path(article.user.id) %></td>
             </tr>

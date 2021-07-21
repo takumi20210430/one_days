@@ -4,27 +4,27 @@
     <div class="col-md-12 user-index">
       <div class="scroll-list jscroll">
         <% @users.each do |user| %>
-          <ul class=" align-items-center user-center">
+          <ul class=" align-items-center center2">
             <li class="user-catalog">
               <%= link_to user_path(user.id) do %>
                 <%= attachment_image_tag user, :image, fallback: "no_image.jpg",class: "text-center img2" %>
               <% end %>
             </li>
             <li class="user-catalog abridgement3">
-              名前</br>
+              名前<br />
               <%= link_to user.name, user_path(user.id) %>
             </li>
 
             <li class="user-catalog">
-              dog</br>
+              dog<br />
               <%= user.dogs.count %>匹
             </li>
             <li class="user-catalog">
-              投稿</br>
+              投稿<br />
               <%= user.articles.count %>本
             </li>
             <div class="user-catalog">
-              フォロワー</br>
+              フォロワー<br>
               <li id="follow_counts_<%= user.id %>">
                 <%= render "follow_count", user: user %>
               </li>

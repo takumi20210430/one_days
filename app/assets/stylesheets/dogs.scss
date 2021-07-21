@@ -13,3 +13,23 @@
     width: 100%;
   }
 }
+
+//タブレットサイズ以下にレスポンシブ対応
+@media screen and (max-width: 768px) {
+  .dog-index{
+    ul{
+      flex-direction: column;
+    }
+  }
+  .catalog{
+    width: 60%;
+  }
+
+  .abridgement2{
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+}

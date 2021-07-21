@@ -165,12 +165,12 @@ em{
 }
 
 .logo{
-  width: 130px;
+  width: 140px;
   height: 110px;
 }
 
 .logo1{
-  width: 130px;
+  width: 140px;
   height: 120px;
   padding-top: 10px;
 }
@@ -186,10 +186,7 @@ em{
   margin-right: 10px;
 }
 
-.dog-img{
-  width: 50%;
-  height: 80px;
-}
+
 
 .card{
   width: 100%;
@@ -212,13 +209,8 @@ em{
 }
 
 .img2{
-  width: 40%;
-  height: 80px;
-}
-
-.img3{
-  width: 40%;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 .btn-3{
@@ -269,6 +261,21 @@ em{
   margin-left: -40px !important;
 }
 
+.center2{
+  text-align: center;
+}
+
+.custom-slider {
+  & img {
+    width: 70%;
+    height: 330px;
+    margin: 0 auto;
+  }
+  & .slick-prev {
+    z-index: 999;
+  }
+}
+
 //タブレットサイズにレスポンシブ対応
 @media screen and (max-width: 768px) {
   #article-show{
@@ -290,26 +297,6 @@ em{
   .img-select{
     font-size: 90%;
 
-  }
-  .catalog{
-    font-size: 4px;
-  }
-
-  .user-catalog{
-    font-size: 4px;
-  }
-
-  .follow{
-    font-size: 3px;
-  }
-
-  .img2{
-  height: 50px;
-  }
-
-  .img3{
-  width:70%;
-  height: 80px;
   }
 
   .search select{
@@ -357,13 +344,17 @@ em{
     height: 100px;
   }
 
+  .custom-slider {
+    & img {
+      height: 180px;
+    }
+  }
+
 
 }
 //スマホサイズにレスポンシブ対応
 @media screen and (max-width: 425px) {
-  .img2{
-  height: 30px;
-  }
+
 
   .table1 th{
     font-size: 1px;
@@ -381,6 +372,12 @@ em{
   .table2 td{
     font-size: 1px;
     padding: 0;
+  }
+
+  .custom-slider {
+    & img {
+      height: 70px;
+    }
   }
 }
 

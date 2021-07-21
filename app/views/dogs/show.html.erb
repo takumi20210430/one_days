@@ -2,14 +2,15 @@
 	<h5 class="text-center mb-4"><%= @dog.name %> のページ</h5>
 	<div class="row" id="article-show">
 	  <div class= "col-5 mx-auto">
-	    <ul class="slider">
-        <li><%= attachment_image_tag @dog, :image1, fallback: "no_image.jpg", class: "center mx-auto article-image2" %></li>
+	    <div class="slider custom-slider">
+        <div><%= attachment_image_tag @dog, :image1, fallback: "no_image.jpg" %></div>
         <% if !@dog.image2.blank? %>
-          <li><%= attachment_image_tag @dog, :image2, class: "center mx-auto article-image2" %></li>
+          <div><%= attachment_image_tag @dog, :image2 %></div>
         <% end %>
         <% if !@dog.image3.blank? %>
-          <li><%= attachment_image_tag @dog, :image3, class: "center mx-auto article-image2" %></li>
+          <div><%= attachment_image_tag @dog, :image3 %></div>
         <% end %>
+      </div>
 	  </div>
 		<div class="col-7 mx-auto">
 			<table class="table table-bordered">

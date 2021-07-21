@@ -25,4 +25,35 @@
   width: 20%;
   vertical-align: middle;
 }
+.img3{
+  width: 50%;
+}
 
+.top-slider {
+  & img {
+    width: 60%;
+    height: 330px;
+    margin: 0 auto;
+  }
+  & .slick-prev {
+    z-index: 999;
+  }
+}
+
+//タブレットサイズにレスポンシブ対応
+@media screen and (max-width: 768px) {
+  .top-slider {
+    & img {
+      height: 180px;
+    }
+  }
+}
+
+//スマホサイズにレスポンシブ対応
+@media screen and (max-width: 425px) {
+  .top-slider {
+    & img {
+      height: 150px;
+    }
+  }
+}

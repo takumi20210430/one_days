@@ -9,7 +9,7 @@
             <label for="article title">
               タイトル
               <em>必須</em>
-            </label>（３０文字以内）</br>
+            </label>（３０文字以内）<br/>
             <%= f.text_field :title %>
           </div>
           <h4>写真を選択する</h4>
@@ -86,7 +86,7 @@
             <%= f.text_area :body %>
           </div>
           <div class="form-group">
-            <br><%= f.submit '更新する' %></br>
+            <%= f.submit '更新する' %><br />
           </div>
         </div>
       <% end %>

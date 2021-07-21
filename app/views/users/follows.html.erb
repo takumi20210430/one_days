@@ -1,16 +1,16 @@
 <div class="container-xl-12">
   <div class="row">
-    <h2 class="offset-1">フォロー一覧</h2>
+    <h2 class="mx-auto">フォロー一覧</h2>
     <div class="col-md-12 user-index">
       <% if @follows.empty? %>
         <h1 class="not-user">ユーザーがいません</h1>
       <% else %>
         <div class="scroll-list jscroll">
           <% @follows.each do |following| %>
-            <ul class="align-items-center">
+            <ul class="align-items-center center2">
               <li class="follow-catalog">
                 <%= link_to user_path(following.id) do %>
-                  <%= attachment_image_tag following, :image, fallback: "no_image.jpg", class: "text-center img3" %>
+                  <%= attachment_image_tag following, :image, fallback: "no_image.jpg", class: "text-center img2" %>
                 <% end %>
               </li>
               <li class="follow-catalog abridgement4">

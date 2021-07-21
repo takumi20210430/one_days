@@ -5,9 +5,9 @@
     </div>
     <div class="col-md-7 offset-md-1">
       <h2>Pet dogs</h2>
-      <table class="table table-hover table-inverse">
+      <table class="table-hover table3">
         <thead>
-          <tr>
+          <tr class="center2">
             <th></th>
             <th>犬種</th>
             <th>名前</th>
@@ -16,10 +16,10 @@
         </thead>
         <tbody>
           <% @dogs.each do |dog| %>
-            <tr>
+            <tr class="center2">
               <td>
                 <%= link_to dog_path(dog.id) do %>
-                  <%= attachment_image_tag(dog, :image1, :fill, 60, 60, fallback: "no_image.jpg",class: "dog-img") %>
+                  <%= attachment_image_tag(dog, :image1, fallback: "no_image.jpg",class: "img5") %>
                 <% end %>
               </td>
               <td>
@@ -28,6 +28,7 @@
               <td>
                 <%= link_to dog.name, dog_path(dog) %>
               </td>
+              <td colspan="3"></td>
             </tr>
          <% end %>
         </tbody>
