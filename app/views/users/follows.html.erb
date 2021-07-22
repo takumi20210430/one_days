@@ -1,6 +1,6 @@
 <div class="container-xl-12">
   <div class="row">
-    <h2 class="mx-auto">フォロー一覧</h2>
+    <h2 class="mx-auto follow-name"><%= @user.name %>さんのフォロー一覧</h2>
     <div class="col-md-12 user-index">
       <% if @follows.empty? %>
         <h1 class="not-user">ユーザーがいません</h1>

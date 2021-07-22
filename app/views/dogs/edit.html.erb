@@ -30,7 +30,7 @@
           </div>
           <h4 class="img-select">犬のプロフィール写真を選択する</h4>
           <div class="form-group">
-            <img id="preview_0" style="width:30%;">
+            <%= attachment_image_tag(@dog, :image1, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_0") %>
             <%= f.attachment_field :image1 %>
             <script>
               $('#dog_image1').on('change', function (e) {
@@ -43,7 +43,7 @@
             </script>
           </div>
           <div class="form-group">
-            <img id="preview_1" style="width:30%;">
+            <%= attachment_image_tag(@dog, :image2, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_1") %>
             <%= f.attachment_field :image2 %>
             <script>
               $('#dog_image2').on('change', function (e) {
@@ -56,7 +56,7 @@
             </script>
           </div>
           <div class="form-group">
-            <img id="preview_2" style="width:30%;">
+            <%= attachment_image_tag(@dog, :image3, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_2") %>
             <%= f.attachment_field :image3 %>
             <script>
               $('#dog_image3').on('change', function (e) {

@@ -14,7 +14,7 @@
           </div>
           <h4 class="img-select">プロフィール写真を選択する</h4>
           <div class="form-group">
-            <img id="preview_0" style="width:30%;">
+            <%= attachment_image_tag(@user, :image, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_0") %>
             <%= f.attachment_field :image %>
             <script>
               $('#user_image').on('change', function (e) {
