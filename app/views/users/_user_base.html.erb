@@ -3,25 +3,25 @@
 <table class="table info text-break">
   <tbody>
     <tr>
-      <th colspan="2">名前</br>
+      <th colspan="2">名前<br />
         <%= user.name %>
       </th>
     </tr>
     <tr>
-      <th colspan="2">愛犬</br>
+      <th colspan="2">愛犬<br />
         <% user.dogs.each do |dog| %>
-          <i class="fas fa-dog"></i><%= dog.name %>(<%= dog.dog_type_id %>)</br>
+          <i class="fas fa-dog"></i><%= dog.name %>(<%= dog.dog_type_id %>)<br />
         <% end %>
       </th>
     </tr>
     <tr>
-      <th colspan="2">自己紹介</br>
+      <th colspan="2">自己紹介<br />
         <%= user.introduction %>
       </th>
     </tr>
     <tr>
       <th>
-        <%=link_to "フォロー", follows_user_path(user.id) %></br>
+        <%=link_to "フォロー", follows_user_path(user.id) %><br />
         <%= user.followings.count %>人
       </th>
       <th>
@@ -34,7 +34,7 @@
     <% if user == current_user %>
       <tr>
         <th colspan="2">
-          <%=link_to "フォローユーザー新着投稿", follows_index_user_path(user.id) %></br>
+          <%=link_to "フォローユーザー新着投稿", follows_index_user_path(user.id) %><br />
         </th>
       </tr>
     <% end %>

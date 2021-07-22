@@ -9,11 +9,11 @@
             タイトル
             <em>必須</em>
           </lebel>（３０文字以内）
-          <br><%= f.text_field :title, class: "col-md-12" %></br>
+          <%= f.text_field :title, class: "col-md-12" %><br />
         </div>
         <h4>写真を選択する</h4>
         <div class="form-group">
-          <img id="preview_0" style="width:30%;">
+          <%= attachment_image_tag(@article, :image1, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_0") %>
           <%= f.attachment_field :image1 %>
           <script>
             $('#article_image1').on('change', function (e) {
@@ -26,7 +26,7 @@
           </script>
         </div>
         <div class="form-group">
-          <img id="preview_1" style="width:30%;">
+          <%= attachment_image_tag(@article, :image2, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_1") %>
           <%= f.attachment_field :image2 %>
           <script>
             $('#article_image2').on('change', function (e) {
@@ -40,7 +40,7 @@
         </div>
         <div class="form-group">
           <img id="preview_2" style="width:30%;">
-          <%= f.attachment_field :image3 %>
+          <%= attachment_image_tag(@article, :image3, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_2") %>
           <script>
             $('#article_image3').on('change', function (e) {
               var reader = new FileReader();
@@ -52,7 +52,7 @@
           </script>
         </div>
         <div class="form-group">
-          <img id="preview_3" style="width:30%;">
+          <%= attachment_image_tag(@article, :image4, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_3") %>
           <%= f.attachment_field :image4 %>
           <script>
             $('#article_image4').on('change', function (e) {
@@ -65,7 +65,7 @@
           </script>
         </div>
         <div class="form-group">
-          <img id="preview_4" style="width:30%;">
+          <%= attachment_image_tag(@article, :image5, :fill,100,100, fallback: "no_image.jpg",size:"100x100",id:"preview_4") %>
           <%= f.attachment_field :image5 %>
           <script>
             $('#article_image5').on('change', function (e) {

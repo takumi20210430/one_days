@@ -9,23 +9,23 @@
             <label for="dog name">
               名前
               <em>必須</em>
-            </label>（１５文字以内）</br>
+            </label>（１５文字以内）<br />
             <%= f.text_field :name %>
           </div>
           <div class="form-group">
-            <label for="dog age">年齢</label></br>
+            <label for="dog age">年齢</label><br />
             <%= f.select :age, Dog.ages.keys %>
           </div>
           <div class="form-group">
           <label for="dog_type_id">犬種</lebel>
-          <br><%= f.select :dog_type_id, Dog.dog_type_ids.keys %></br>
+          <br><%= f.select :dog_type_id, Dog.dog_type_ids.keys %><br />
         </div>
           <div class="form-group">
-            <label for="dog skill">特技</label>（１５文字以内）</br>
+            <label for="dog skill">特技</label>（１５文字以内）<br />
             <%= f.text_field :skill %>
           </div>
           <div class="form-group">
-            <label for="dog favorite">お気に入り</label>（１５文字以内）</br>
+            <label for="dog favorite">お気に入り</label>（１５文字以内）<br />
             <%= f.text_field :favorite %>
           </div>
           <h4 class="img-select">犬のプロフィール写真を選択する</h4>
@@ -69,11 +69,11 @@
             </script>
           </div>
           <div class="form-group">
-            <label for="dog introduction">愛犬紹介</label>（１５０文字以内）</br>
+            <label for="dog introduction">愛犬紹介</label>（１５０文字以内）<br />
             <%= f.text_area :introduction, size:'90x5' %>
           </div>
           <div class="form-group">
-            <br><%= f.submit '変更する' %></br>
+            <br><%= f.submit '変更する' %><br />
           </div>
         </div>
       <% end %>

@@ -7,14 +7,14 @@
           <div class="card">
             <div class="abridgement">
               <%= i %>
-              タイトル</br> <%= link_to article.title,article_path(article.id) %>
+              タイトル<br /> <%= link_to article.title,article_path(article.id) %>
             </div>
             <div id="favorite_buttons_<%= article.id %>">
               <%= render "favorites/favorite", article: article %>
             </div>
             <p><%= "#{article.article_comments.count} コメント" %></p>
             <%= link_to article_path(article.id) do %>
-              <%= attachment_image_tag(article, :image1,fallback: "no_image.jpg",class: 'article-img' ) %></br>
+              <%= attachment_image_tag(article, :image1,fallback: "no_image.jpg",class: 'article-img' ) %><br >
               <div class="abridgement">
                 投稿者 <%= article.user.name %>
               </div>

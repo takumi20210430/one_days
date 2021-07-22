@@ -279,6 +279,11 @@ em{
     width: 20px;
     height: 20px;
   }
+  .error{
+    color:red;
+  }
+
+
 }
 
 //タブレットサイズにレスポンシブ対応
@@ -383,6 +388,12 @@ em{
     & img {
       height: 70px;
     }
+  }
+  .error{
+    font-size: 20px;
+  }
+  .error2{
+    font-size: 13px;
   }
 }
 

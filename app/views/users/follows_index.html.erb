@@ -9,11 +9,11 @@
           <div class="col mb-4">
             <div class="card">
               <div class="abridgement">
-                タイトル</br><%= link_to article.title,article_path(article.id) %>
+                タイトル<br /><%= link_to article.title,article_path(article.id) %>
               </div>
               <p><%= "#{article.article_comments.count} コメント" %></p>
               <%= link_to article_path(article.id) do %>
-                <%= attachment_image_tag(article, :image1,fallback: "no_image.jpg",class: 'article-img' ) %></br>
+                <%= attachment_image_tag(article, :image1,fallback: "no_image.jpg",class: 'article-img' ) %><br />
                 <div class="abridgement">
                   投稿者 <%= article.user.name %>
                 </div>

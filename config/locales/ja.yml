@@ -1,9 +1,12 @@
 ja:
+  errors:
+    messages:
+      not_saved: '登録出来ませんでした。'
+      
   devise:
     sessions:
       user:
         signed_in: 'ログインしました。'
-
 
   activerecord:
     models:
@@ -13,6 +16,7 @@ ja:
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
+        errors prohibited this obj from being saved: 'エラーにより、保存できませんでした。'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
@@ -21,13 +25,13 @@ ja:
       user:
         password: パスワード
         email: メールアドレス
-        name: ・名前
-        introduction: ・自己紹介
+        name: 名前
+        introduction: 自己紹介
       dog:
-        name: ・名前
-        introduction: ・紹介
-        price: ・特技
-        favorite: ・お気に入り
+        name: 名前
+        introduction: 紹介
+        price: 特技
+        favorite: お気に入り
       article:
-        title: ・タイトル
-        body: ・投稿内容
+        title: タイトル
+        body: 投稿内容

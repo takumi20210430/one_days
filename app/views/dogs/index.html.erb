@@ -1,6 +1,6 @@
 <div class="container-xl-12">
   <div class="row mx-auto">
-     <h2 class="offset-1">犬一覧</h2>
+    <h2 class="offset-1">犬一覧</h2>
     <div class="col-md-12 dog-index">
       <div class="scroll-list jscroll">
         <% @dogs.each do |dog| %>
@@ -11,19 +11,19 @@
               <% end %>
             </li>
             <li class="catalog abridgement2">
-              名前</br>
+              名前<br />
               <%= link_to dog.name, dog_path(dog.id) %>
             </li>
             <li class="catalog abridgement2">
-              犬種</br>
+              犬種<br />
               <%= dog.dog_type_id %>
             </li>
             <li class="catalog">
-              年齢</br>
+              年齢<br />
               <%= dog.age %>才
             </li>
             <li class="catalog abridgement2">
-              飼い主</br>
+              飼い主<br />
               <%= link_to user_path(dog.user) do %>
                 <%= dog.user.name %>
               <% end %>
