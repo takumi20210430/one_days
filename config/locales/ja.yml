@@ -2,7 +2,7 @@ ja:
   errors:
     messages:
       not_saved: '登録出来ませんでした。'
-      
+
   devise:
     sessions:
       user:
@@ -13,14 +13,6 @@ ja:
       user: 'ユーザー'
       dog: '犬'
       article: '記事'
-    errors:
-      messages:
-        record_invalid: 'バリデーションに失敗しました: %{errors}'
-        errors prohibited this obj from being saved: 'エラーにより、保存できませんでした。'
-        restrict_dependent_destroy:
-          has_one: "%{record}が存在しているので削除できません"
-          has_many: "%{record}が存在しているので削除できません"
-
     attributes:
       user:
         password: パスワード
