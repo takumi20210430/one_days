@@ -271,6 +271,7 @@ em{
     height: 330px;
     margin: 0 auto;
   }
+
   & .slick-prev {
     z-index: 999;
   }
@@ -280,11 +281,22 @@ em{
     height: 20px;
   }
   .error{
-    color:red;
+    color: red;
   }
-
-
 }
+
+.beside{
+  min-width: 110px;
+}
+
+.table4 {
+  width: 100%;
+  margin-right: 10px;
+  table-layout: fixed;
+  overflow-wrap : break-word;
+}
+
+
 
 //タブレットサイズにレスポンシブ対応
 @media screen and (max-width: 768px) {
@@ -360,6 +372,15 @@ em{
     }
   }
 
+  .beside{
+    min-width: 0px;
+    font-size: 10px;
+  }
+  .beside2{
+    font-size: 10px;
+  }
+
+
 
 }
 //スマホサイズにレスポンシブ対応
@@ -396,6 +417,13 @@ em{
   .error2{
     font-size: 13px;
     padding-left: 20px;
+  }
+  .beside{
+    font-size: 8px;
+
+  }
+  .beside2{
+    font-size: 8px;
   }
 }
 
