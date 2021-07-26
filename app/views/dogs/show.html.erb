@@ -4,6 +4,7 @@
 	  <div class= "col-5 mx-auto">
 	    <div class="slider custom-slider">
         <div><%= attachment_image_tag @dog, :image1, fallback: "no_image.jpg" %></div>
+        <!-- image2の写真があれば表示する-->
         <% if !@dog.image2.blank? %>
           <div><%= attachment_image_tag @dog, :image2 %></div>
         <% end %>

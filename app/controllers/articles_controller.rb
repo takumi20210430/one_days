@@ -58,6 +58,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @user = @article.user
       unless @user.id == current_user.id || current_user.admin
+        #本人の他に管理者フラグを持っている人も編集可能
         redirect_to articles_path
       end
   end

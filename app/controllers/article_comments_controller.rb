@@ -6,7 +6,7 @@ class ArticleCommentsController < ApplicationController
     @comment = current_user.article_comments.new(article_comment_params)
     @comment.article_id = @article.id
     if @comment.save
-      #redirect_to article_path(article)
+      #redirect_to article_path(article)　非同期通信
     else
       render 'show'
     end
@@ -16,7 +16,7 @@ class ArticleCommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = ArticleComment.find(params[:id])
     @comment.destroy
-    #redirect_to article_path(params[:article_id])
+    #redirect_to article_path(params[:article_id])　非同期通信
   end
 
   private
