@@ -2,7 +2,7 @@
   <tr>
     <td>
       <%= link_to user_path(article_comment.user) do %>
-        <%= image_tag('no_image.jpg') %><br />
+        <%= attachment_image_tag article_comment.user, :image, fallback: "no_image.jpg" ,class: "img4" %><br />
         <%= link_to article_comment.user.name %>
       <% end %>
       <%= article_comment.created_at.strftime('%Y/%m/%d') %>
